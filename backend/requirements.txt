@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+yt-dlp
+google-genai
+supabase
+python-dotenv
+ffmpeg-python
+pydantic

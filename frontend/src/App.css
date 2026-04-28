@@ -212,6 +212,26 @@
   margin-bottom: var(--space-lg);
 }
 
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--text-secondary);
+  background: var(--surface-color);
+  border: 1px dashed var(--border-color);
+  border-radius: 12px;
+  width: 100%;
+}
+
+.empty-state h3 {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
 /* Recipe Detail View */
 .recipe-detail-view {
   display: flex;
@@ -363,11 +383,11 @@
 
 .step-image {
   width: 100%;
-  height: 200px;
+  max-height: 500px;
+  object-fit: contain;
   border-radius: 12px;
-  background-size: cover;
-  background-position: center;
   border: 1px solid var(--border-color);
+  background-color: var(--surface-color);
 }
 
 /* Bottom Navigation */
