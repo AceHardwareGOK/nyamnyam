@@ -65,6 +65,49 @@ function CreateRecipeView({ onBack, initialData, onSave }: { onBack: () => void,
   const [servings, setServings] = useState(initialData?.servings || '');
   const [ingredients, setIngredients] = useState<string[]>(initialData?.ingredients?.length ? initialData.ingredients : ['']);
   const [steps, setSteps] = useState<{text: string, image?: string}[]>(initialData?.steps?.length ? initialData.steps.map((s:any) => ({text: s.text, image: s.image})) : [{ text: '' }]);
+  const [mainImage, setMainImage] = useState<string>(initialData?.image || '');
+  const [isUploading, setIsUploading] = useState(false);
+  const [errorModal, setErrorModal] = useState<string | null>(null);
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>, setter: (url: string) => void) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    if (!file.type.startsWith('image/')) {
+      setErrorModal('Цей формат файлу не підтримується. Будь ласка, оберіть зображення (JPEG, PNG, WebP тощо).');
+      return;
+    }
+
+    setIsUploading(true);
+    try {
+      const formData = new FormData();
+      formData.append('file', file);
+      
+      const { data: { session } } = await supabase.auth.getSession();
+      const headers: Record<string, string> = {};
+      if (session?.access_token) {
+        headers['Authorization'] = `Bearer ${session.access_token}`;
+      }
+
+      const res = await fetch('http://localhost:8000/api/upload-image', {
+        method: 'POST',
+        headers,
+        body: formData
+      });
+      
+      if (!res.ok) {
+        throw new Error('Невдалий запит на сервер');
+      }
+      
+      const data = await res.json();
+      setter(data.url);
+    } catch (error: any) {
+      console.error(error);
+      setErrorModal('Сталася помилка при завантаженні фото: ' + error.message);
+    } finally {
+      setIsUploading(false);
+    }
+  };
 
   const updateIngredient = (index: number, val: string) => {
     const newArr = [...ingredients];
@@ -79,6 +122,13 @@ function CreateRecipeView({ onBack, initialData, onSave }: { onBack: () => void,
     newArr[index].text = val;
     setSteps(newArr);
   };
+  
+  const updateStepImage = (index: number, url: string) => {
+    const newArr = [...steps];
+    newArr[index].image = url;
+    setSteps(newArr);
+  };
+
   const addStep = () => setSteps([...steps, { text: '' }]);
   const removeStep = (index: number) => setSteps(steps.filter((_, i) => i !== index));
 
@@ -88,12 +138,35 @@ function CreateRecipeView({ onBack, initialData, onSave }: { onBack: () => void,
       time_minutes: parseInt(time) || 0,
       servings: parseInt(servings as string) || 1,
       ingredients: ingredients.filter(i => i.trim()),
-      steps: steps.filter(s => s.text.trim())
+      steps: steps.filter(s => s.text.trim()),
+      main_image_url: mainImage
     });
   };
 
   return (
     <div className="create-recipe-view fade-in">
+      {errorModal && (
+        <div className="modal-overlay" style={{
+          position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+          background: 'rgba(0, 0, 0, 0.15)', zIndex: 1000,
+          display: 'flex', alignItems: 'center', justifyContent: 'center'
+        }}>
+          <div className="modal-fade-in" style={{
+            background: 'var(--surface-color)',
+            padding: '2rem', borderRadius: '16px',
+            maxWidth: '90%', width: '400px',
+            boxShadow: '0 10px 25px rgba(0,0,0,0.2)'
+          }}>
+            <h3 style={{ marginTop: 0, marginBottom: '1rem', color: 'var(--text-color)' }}>Помилка</h3>
+            <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', lineHeight: 1.5 }}>
+              {errorModal}
+            </p>
+            <button className="btn-primary" style={{ width: '100%', marginTop: 0 }} onClick={() => setErrorModal(null)}>
+              Зрозуміло
+            </button>
+          </div>
+        </div>
+      )}
       <button className="btn-back" onClick={onBack}>
         <ArrowLeft size={20} />
         <span>Назад</span>
@@ -137,10 +210,25 @@ function CreateRecipeView({ onBack, initialData, onSave }: { onBack: () => void,
 
       <div className="form-group">
         <label className="form-label">Головне фото</label>
-        <div className="image-upload-box">
-          <Camera size={32} />
-          <span>Завантажити фото</span>
-        </div>
+        <label className="image-upload-box" style={{ 
+          cursor: isUploading ? 'wait' : 'pointer',
+          padding: mainImage ? 0 : undefined,
+          overflow: 'hidden',
+          height: mainImage ? 'auto' : '160px',
+          position: 'relative'
+        }}>
+          <input type="file" accept="image/*" style={{ display: 'none' }} disabled={isUploading} onChange={(e) => handleImageUpload(e, setMainImage)} />
+          {!mainImage && <Camera size={32} />}
+          
+          {mainImage && <img src={mainImage} alt="Головне фото" style={{ width: '100%', height: 'auto', display: 'block' }} />}
+          
+          <span style={mainImage ? { 
+            position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
+            background: 'rgba(0,0,0,0.6)', padding: '6px 12px', borderRadius: '6px', color: 'white' 
+          } : {}}>
+            {isUploading ? 'Завантаження...' : (mainImage ? 'Змінити фото' : 'Завантажити фото')}
+          </span>
+        </label>
       </div>
 
       <div className="form-section">
@@ -188,10 +276,25 @@ function CreateRecipeView({ onBack, initialData, onSave }: { onBack: () => void,
                 value={step.text} 
                 onChange={(e) => updateStep(idx, e.target.value)} 
               />
-              <div className="image-upload-box small">
-                <ImagePlus size={24} />
-                <span>Фото кроку (необов'язково)</span>
-              </div>
+              <label className="image-upload-box small" style={{ 
+                cursor: isUploading ? 'wait' : 'pointer',
+                padding: step.image ? 0 : undefined,
+                overflow: 'hidden',
+                height: step.image ? 'auto' : '100px',
+                position: 'relative'
+              }}>
+                <input type="file" accept="image/*" style={{ display: 'none' }} disabled={isUploading} onChange={(e) => handleImageUpload(e, (url) => updateStepImage(idx, url))} />
+                {!step.image && <ImagePlus size={24} />}
+                
+                {step.image && <img src={step.image} alt={`Крок ${idx + 1}`} style={{ width: '100%', height: 'auto', display: 'block' }} />}
+                
+                <span style={step.image ? { 
+                  position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
+                  background: 'rgba(0,0,0,0.6)', padding: '4px 8px', borderRadius: '4px', color: 'white', fontSize: '0.8rem', textAlign: 'center' 
+                } : {}}>
+                  {step.image ? 'Змінити фото' : "Фото кроку (необов'язково)"}
+                </span>
+              </label>
             </div>
           ))}
         </div>
@@ -200,10 +303,15 @@ function CreateRecipeView({ onBack, initialData, onSave }: { onBack: () => void,
         </button>
       </div>
 
-      <button className="btn-primary btn-save" onClick={handleSubmit}>
-        <Save size={20} />
-        {initialData ? 'Оновити рецепт' : 'Зберегти рецепт'}
-      </button>
+      <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem' }}>
+        <button className="btn-secondary" style={{ flex: 1, padding: '1rem', fontSize: '1.1rem', borderRadius: '12px' }} onClick={onBack} disabled={isUploading}>
+          Скасувати
+        </button>
+        <button className="btn-primary btn-save" style={{ flex: 1, marginTop: 0 }} onClick={handleSubmit} disabled={isUploading}>
+          <Save size={20} />
+          {initialData ? 'Оновити' : 'Зберегти'}
+        </button>
+      </div>
     </div>
   );
 }
@@ -211,6 +319,7 @@ function CreateRecipeView({ onBack, initialData, onSave }: { onBack: () => void,
 function App() {
   const [url, setUrl] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [isFetchingDetails, setIsFetchingDetails] = useState(false);
   const [activeTab, setActiveTab] = useState('home'); // 'home' | 'recipes' | 'settings' | 'create'
   const [selectedRecipe, setSelectedRecipe] = useState<any | null>(null);
   const [theme, setTheme] = useState<'light' | 'dark' | 'system'>(() => {
@@ -219,6 +328,23 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [session, setSession] = useState<any | null>(null);
   const [recipesList, setRecipesList] = useState<any[]>([]);
+
+  const [modalConfig, setModalConfig] = useState<{isOpen: boolean, title: string, message: string, type: 'alert' | 'confirm', onConfirm?: () => void, onCancel?: () => void}>({ isOpen: false, title: '', message: '', type: 'alert' });
+
+  const showAlert = (title: string, message: string) => {
+    setModalConfig({ isOpen: true, title, message, type: 'alert' });
+  };
+
+  const showConfirm = (title: string, message: string, onConfirm: () => void, onCancel?: () => void) => {
+    setModalConfig({ isOpen: true, title, message, type: 'confirm', onConfirm, onCancel });
+  };
+
+  const closeModal = () => {
+    if (modalConfig.type === 'confirm' && modalConfig.onCancel) {
+      modalConfig.onCancel();
+    }
+    setModalConfig(prev => ({ ...prev, isOpen: false }));
+  };
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -256,33 +382,74 @@ function App() {
   };
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/recipes', {
-      headers: getHeaders()
-    })
-      .then(res => res.json())
-      .then(data => {
-        if (data.status === 'success') {
-          setRecipesList(data.data.map((r: any) => {
-            let mainImage = r.main_image_url;
-            if (!mainImage && r.recipe_steps && r.recipe_steps.length > 0) {
-              const stepsWithImage = r.recipe_steps.filter((s: any) => s.image_url);
-              if (stepsWithImage.length > 0) mainImage = stepsWithImage[stepsWithImage.length - 1].image_url;
-            }
-            if (!mainImage) mainImage = "https://images.unsplash.com/photo-1574783756547-258b3c720fe9?auto=format&fit=crop&q=80&w=400";
-            return {
-              id: r.id,
-              title: r.title,
-              time: `${r.time_minutes} хв`,
-              image: mainImage
-            };
-          }));
-        }
+    if (activeTab === 'recipes' || activeTab === 'home') {
+      fetch('http://localhost:8000/api/recipes', {
+        headers: getHeaders()
       })
-      .catch(err => console.error("Failed to fetch recipes:", err));
-  }, [activeTab]);
+        .then(res => res.json())
+        .then(data => {
+          if (data.status === 'success') {
+            setRecipesList(data.data.map((r: any) => {
+              let mainImage = r.main_image_url;
+              if (!mainImage && r.recipe_steps && r.recipe_steps.length > 0) {
+                const stepsWithImage = r.recipe_steps.filter((s: any) => s.image_url);
+                if (stepsWithImage.length > 0) mainImage = stepsWithImage[stepsWithImage.length - 1].image_url;
+              }
+              if (!mainImage) mainImage = "https://images.unsplash.com/photo-1574783756547-258b3c720fe9?auto=format&fit=crop&q=80&w=400";
+              return {
+                id: r.id,
+                title: r.title,
+                time: `${r.time_minutes} хв`,
+                image: mainImage
+              };
+            }));
+          }
+        })
+        .catch(err => console.error("Failed to fetch recipes:", err));
+    }
+  }, [activeTab, session]);
+
+  // Hash-routing to support browser Back/Forward buttons
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '');
+      
+      if (hash === 'recipes') {
+        setActiveTab('recipes');
+        setSelectedRecipe(null);
+      } else if (hash === 'settings') {
+        setActiveTab('settings');
+        setSelectedRecipe(null);
+      } else if (hash === 'create') {
+        setActiveTab('create');
+        setSelectedRecipe(null);
+      } else if (hash.startsWith('recipe-')) {
+        const id = hash.replace('recipe-', '');
+        setActiveTab(prev => (prev === 'edit' || prev === 'create') ? 'home' : prev);
+        if (!selectedRecipe || selectedRecipe.id !== id) {
+          fetchRecipeDetails(id);
+        }
+      } else if (hash.startsWith('edit-')) {
+        const id = hash.replace('edit-', '');
+        setActiveTab('edit');
+        if (!selectedRecipe || selectedRecipe.id !== id) {
+          fetchRecipeDetails(id);
+        }
+      } else {
+        setActiveTab('home');
+        setSelectedRecipe(null);
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    // Initialize state from hash on first load
+    handleHashChange();
+
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, [session, selectedRecipe]);
 
   const fetchRecipeDetails = async (id: string) => {
-    setIsLoading(true);
+    setIsFetchingDetails(true);
     try {
       const response = await fetch(`http://localhost:8000/api/recipes/${id}`, {
         headers: getHeaders()
@@ -315,9 +482,9 @@ function App() {
       setSelectedRecipe(detailedRecipe);
     } catch (error) {
       console.error(error);
-      alert("Не вдалося завантажити деталі рецепту.");
+      showAlert('Помилка', "Не вдалося завантажити деталі рецепту.");
     } finally {
-      setIsLoading(false);
+      setIsFetchingDetails(false);
     }
   };
 
@@ -368,38 +535,58 @@ function App() {
         }))
       };
       
-      setSelectedRecipe(newRecipe);
       setUrl('');
+      window.location.hash = `recipe-${result.db_info.id}`;
     } catch (error) {
       console.error(error);
-      alert('Не вдалося згенерувати рецепт. Перевірте посилання або спробуйте пізніше.');
+      showAlert('Помилка', 'Не вдалося згенерувати рецепт. Перевірте посилання або спробуйте пізніше.');
     } finally {
       setIsLoading(false);
     }
   };
 
   const handleTabChange = (tab: string) => {
-    setActiveTab(tab);
-    setSelectedRecipe(null);
+    window.location.hash = tab === 'home' ? '' : tab;
   };
 
   const handleDelete = async (id: string) => {
-    if (!confirm('Ви дійсно хочете видалити цей рецепт?')) return;
-    try {
-      const res = await fetch(`http://localhost:8000/api/recipes/${id}`, {
-        method: 'DELETE',
-        headers: getHeaders()
-      });
-      if (res.ok) {
-        setRecipesList(recipesList.filter(r => r.id !== id));
-        setSelectedRecipe(null);
-      } else {
-        alert('Помилка: неможливо видалити рецепт.');
+    showConfirm('Підтвердження видалення', 'Ви дійсно хочете видалити цей рецепт?', async () => {
+      try {
+        const res = await fetch(`http://localhost:8000/api/recipes/${id}`, {
+          method: 'DELETE',
+          headers: getHeaders()
+        });
+        if (res.ok) {
+          setRecipesList(prev => prev.filter(r => r.id !== id));
+          setSelectedRecipe(null);
+        } else {
+          showAlert('Помилка', 'Неможливо видалити рецепт.');
+        }
+      } catch (err) {
+        console.error(err);
+        showAlert('Помилка', 'Помилка з\'єднання з сервером.');
       }
-    } catch (err) {
-      console.error(err);
-      alert('Помилка з\'єднання з сервером.');
-    }
+    });
+  };
+
+  const handleDeleteAll = async () => {
+    showConfirm('Видалення всіх рецептів', 'Ви дійсно хочете видалити всі свої рецепти? Цю дію неможливо скасувати.', async () => {
+      try {
+        const res = await fetch(`http://localhost:8000/api/recipes`, {
+          method: 'DELETE',
+          headers: getHeaders()
+        });
+        if (res.ok) {
+          setRecipesList([]);
+          showAlert('Успіх', 'Всі ваші рецепти успішно видалено.');
+        } else {
+          showAlert('Помилка', 'Неможливо видалити рецепти.');
+        }
+      } catch (err) {
+        console.error(err);
+        showAlert('Помилка', 'Помилка з\'єднання з сервером.');
+      }
+    });
   };
 
   const handleShare = async (id: string) => {
@@ -409,9 +596,9 @@ function App() {
         headers: getHeaders()
       });
       if (res.ok) {
-        alert('Тепер цей рецепт публічний! Ви можете скопіювати посилання.');
+        showAlert('Успіх', 'Тепер цей рецепт публічний! Ви можете скопіювати посилання.');
       } else {
-        alert('Помилка: не вдалося зробити рецепт публічним.');
+        showAlert('Помилка', 'Не вдалося зробити рецепт публічним.');
       }
     } catch (err) {
       console.error(err);
@@ -427,10 +614,12 @@ function App() {
         body: JSON.stringify(data)
       });
       if (res.ok) {
-        alert('Рецепт успішно оновлено!');
-        setActiveTab('recipes'); // Go back to list
+        showAlert('Успіх', 'Рецепт успішно оновлено!');
+        // Re-fetch the updated recipe details to show the new data
+        await fetchRecipeDetails(selectedRecipe.id);
+        setActiveTab('recipes'); // This doesn't matter much as selectedRecipe is truthy, but good for state
       } else {
-        alert('Помилка: неможливо оновити рецепт.');
+        showAlert('Помилка', 'Неможливо оновити рецепт.');
       }
     } catch (err) {
       console.error(err);
@@ -439,6 +628,40 @@ function App() {
 
   return (
     <>
+      {modalConfig.isOpen && (
+        <div className="modal-overlay" style={{
+          position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+          background: 'rgba(0, 0, 0, 0.15)', zIndex: 9999,
+          display: 'flex', alignItems: 'center', justifyContent: 'center'
+        }}>
+          <div className="modal-fade-in" style={{
+            background: 'var(--surface-color)',
+            padding: '2rem', borderRadius: '16px',
+            maxWidth: '90%', width: '400px',
+            boxShadow: '0 10px 25px rgba(0,0,0,0.2)'
+          }}>
+            <h3 style={{ marginTop: 0, marginBottom: '1rem', color: 'var(--text-color)' }}>{modalConfig.title}</h3>
+            <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', lineHeight: 1.5 }}>
+              {modalConfig.message}
+            </p>
+            <div style={{ display: 'flex', gap: '1rem' }}>
+              {modalConfig.type === 'confirm' && (
+                <button className="btn-secondary" style={{ flex: 1, marginTop: 0 }} onClick={closeModal}>
+                  Скасувати
+                </button>
+              )}
+              <button className="btn-primary" style={{ flex: 1, marginTop: 0 }} onClick={() => {
+                if (modalConfig.type === 'confirm' && modalConfig.onConfirm) {
+                  modalConfig.onConfirm();
+                }
+                setModalConfig(prev => ({ ...prev, isOpen: false }));
+              }}>
+                {modalConfig.type === 'confirm' ? 'Підтвердити' : 'Зрозуміло'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
       <div className="app-wrapper fade-in">
         <header className="header">
         <div className="logo" onClick={() => handleTabChange('home')} style={{cursor: 'pointer'}}>
@@ -449,15 +672,17 @@ function App() {
           {!isLoggedIn ? (
             <button className="btn-secondary" onClick={loginWithGoogle}>Увійти через Google</button>
           ) : (
-            <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Вітаємо!</span>
+            <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+              Вітаємо, {session?.user?.user_metadata?.full_name?.split(' ')[0] || session?.user?.user_metadata?.name?.split(' ')[0] || 'кулінаре'}!
+            </span>
           )}
         </div>
       </header>
 
       <main className="main-content container">
-        {selectedRecipe ? (
+        {selectedRecipe && activeTab !== 'edit' ? (
           <div className="recipe-detail-view fade-in">
-            <button className="btn-back" onClick={() => setSelectedRecipe(null)}>
+            <button className="btn-back" onClick={() => { window.location.hash = activeTab === 'recipes' ? 'recipes' : ''; }}>
               <ArrowLeft size={20} />
               <span>Назад</span>
             </button>
@@ -509,7 +734,7 @@ function App() {
               </div>
 
               <div className="recipe-actions" style={{ display: 'flex', gap: '1rem', marginTop: '2rem' }}>
-                <button className="settings-action-btn" onClick={() => setActiveTab('edit')}>
+                <button className="settings-action-btn" onClick={() => { window.location.hash = `edit-${selectedRecipe.id}`; }}>
                   <Edit2 size={20} />
                   <span>Редагувати</span>
                 </button>
@@ -541,11 +766,23 @@ function App() {
                     value={url}
                     onChange={(e) => setUrl(e.target.value)}
                     required
+                    disabled={isLoading}
                   />
                   <button type="submit" className="btn-primary" disabled={isLoading}>
-                    {isLoading ? 'Магія ШІ...' : <ArrowRight size={20} />}
+                    {isLoading ? 'Обробка...' : <ArrowRight size={20} />}
                   </button>
                 </div>
+
+                {isLoading && (
+                  <div className="progress-container fade-in">
+                    <div className="progress-bar">
+                      <div className="progress-bar-fill"></div>
+                    </div>
+                    <div className="progress-text">
+                      ШІ аналізує відео та створює покроковий рецепт... Це може зайняти до хвилини.
+                    </div>
+                  </div>
+                )}
               </form>
 
               <div className="hero-divider">
@@ -563,7 +800,7 @@ function App() {
                 <h3 className="section-title">Останні збережені</h3>
                 <div className="recipes-grid">
                   {recipesList.map(recipe => (
-                    <div key={recipe.id} className="recipe-card" onClick={() => fetchRecipeDetails(recipe.id)}>
+                    <div key={recipe.id} className="recipe-card" onClick={() => { window.location.hash = `recipe-${recipe.id}`; }}>
                       <div className="recipe-image" style={{ backgroundImage: `url(${recipe.image})` }}></div>
                       <div className="recipe-info">
                         <h4>{recipe.title}</h4>
@@ -614,16 +851,16 @@ function App() {
 
             <div className="settings-section">
               <h3 className="section-title">Дані</h3>
-              <button className="settings-action-btn danger">
+              <button className="settings-action-btn danger" onClick={handleDeleteAll}>
                 <Trash2 size={20} />
                 <span>Видалити всі рецепти</span>
               </button>
             </div>
           </div>
         ) : activeTab === 'create' ? (
-          <CreateRecipeView onBack={() => handleTabChange('home')} onSave={(data) => alert('Створення в розробці...')} />
+          <CreateRecipeView onBack={() => { window.location.hash = ''; }} onSave={(data) => showAlert('Інфо', 'Створення в розробці...')} />
         ) : activeTab === 'edit' && selectedRecipe ? (
-          <CreateRecipeView initialData={selectedRecipe} onBack={() => setActiveTab('home')} onSave={handleEditSave} />
+          <CreateRecipeView initialData={selectedRecipe} onBack={() => { window.location.hash = `recipe-${selectedRecipe.id}`; }} onSave={handleEditSave} />
         ) : (
           <div className="recipes-view fade-in">
             <h2 className="page-title">Мої рецепти</h2>
@@ -636,7 +873,7 @@ function App() {
             ) : (
               <div className="recipes-grid">
                   {recipesList.map(recipe => (
-                    <div key={recipe.id} className="recipe-card" onClick={() => fetchRecipeDetails(recipe.id)}>
+                    <div key={recipe.id} className="recipe-card" onClick={() => { window.location.hash = `recipe-${recipe.id}`; }}>
                       <div className="recipe-image" style={{ backgroundImage: `url(${recipe.image})` }}></div>
                       <div className="recipe-info">
                         <h4>{recipe.title}</h4>

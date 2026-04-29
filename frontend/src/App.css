@@ -141,6 +141,61 @@
   cursor: not-allowed;
 }
 
+/* Progress Bar */
+.progress-container {
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.progress-bar {
+  height: 6px;
+  background-color: var(--border-color);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: var(--accent-color);
+  width: 30%;
+  border-radius: 4px;
+  animation: loading-progress 2s infinite ease-in-out;
+}
+
+.progress-text {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-align: center;
+  font-weight: 500;
+  animation: pulse-text 1.5s infinite;
+}
+
+@keyframes loading-progress {
+  0% {
+    left: -30%;
+    width: 30%;
+  }
+  50% {
+    width: 50%;
+  }
+  100% {
+    left: 100%;
+    width: 30%;
+  }
+}
+
+@keyframes pulse-text {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
 /* Recent Recipes Section */
 .recent-recipes {
   width: 100%;

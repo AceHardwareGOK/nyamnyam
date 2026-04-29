@@ -129,6 +129,15 @@ def delete_recipe(recipe_id: str, user_id: str) -> bool:
         print("Delete error:", e)
         return False
 
+def delete_all_recipes(user_id: str) -> bool:
+    if not supabase: return False
+    try:
+        res = supabase.table("recipes").delete().eq("user_id", user_id).execute()
+        return True # if no error
+    except Exception as e:
+        print("Delete all error:", e)
+        return False
+
 def update_recipe(recipe_id: str, user_id: str, data: dict) -> bool:
     if not supabase: return False
     try:
@@ -138,6 +147,9 @@ def update_recipe(recipe_id: str, user_id: str, data: dict) -> bool:
             "time_minutes": data.get("time_minutes"),
             "servings": data.get("servings")
         }
+        if "main_image_url" in data and data["main_image_url"]:
+            update_data["main_image_url"] = data["main_image_url"]
+            
         res = supabase.table("recipes").update(update_data).eq("id", recipe_id).eq("user_id", user_id).execute()
         if not res.data:
             return False

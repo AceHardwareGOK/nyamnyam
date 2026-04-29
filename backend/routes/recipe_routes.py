@@ -1,11 +1,12 @@
-from fastapi import APIRouter, HTTPException, Header, Depends
+from fastapi import APIRouter, HTTPException, Header, Depends, UploadFile, File
 from pydantic import BaseModel
 import os
+import shutil
 
 from services.video_service import download_video
 from services.ai_service import extract_recipe_from_video
 from services.media_service import extract_screenshots
-from services.db_service import upload_image, save_recipe, get_all_recipes, get_recipe_by_id, supabase, delete_recipe, update_recipe, make_recipe_public
+from services.db_service import upload_image, save_recipe, get_all_recipes, get_recipe_by_id, supabase, delete_recipe, delete_all_recipes, update_recipe, make_recipe_public
 
 router = APIRouter()
 
@@ -21,6 +22,30 @@ def get_current_user_id(authorization: str = Header(None)) -> str | None:
     except Exception as e:
         print("Auth error:", e)
     return None
+
+@router.post("/upload-image")
+def upload_image_route(file: UploadFile = File(...), user_id: str | None = Depends(get_current_user_id)):
+    if not user_id:
+        raise HTTPException(status_code=401, detail="Unauthorized")
+    
+    # Save file temporarily
+    temp_path = f"temp_{file.filename}"
+    try:
+        with open(temp_path, "wb") as buffer:
+            shutil.copyfileobj(file.file, buffer)
+            
+        # Upload via db_service
+        public_url = upload_image(temp_path)
+        if not public_url:
+            raise HTTPException(status_code=500, detail="Не вдалося завантажити зображення у сховище")
+            
+        return {"status": "success", "url": public_url}
+    except Exception as e:
+        print("Upload error:", e)
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        if os.path.exists(temp_path):
+            os.remove(temp_path)
 
 @router.get("/recipes")
 def list_recipes(user_id: str | None = Depends(get_current_user_id)):
@@ -107,12 +132,22 @@ def delete_recipe_route(recipe_id: str, user_id: str | None = Depends(get_curren
         raise HTTPException(status_code=403, detail="Не вдалося видалити рецепт (можливо, він вам не належить)")
     return {"status": "success"}
 
+@router.delete("/recipes")
+def delete_all_recipes_route(user_id: str | None = Depends(get_current_user_id)):
+    if not user_id:
+        raise HTTPException(status_code=401, detail="Unauthorized")
+    success = delete_all_recipes(user_id)
+    if not success:
+        raise HTTPException(status_code=500, detail="Не вдалося видалити всі рецепти")
+    return {"status": "success"}
+
 class UpdateRecipeRequest(BaseModel):
     title: str
     time_minutes: int
     servings: int
     ingredients: list[str]
     steps: list[dict]
+    main_image_url: str | None = None
 
 @router.put("/recipes/{recipe_id}")
 def update_recipe_route(recipe_id: str, req: UpdateRecipeRequest, user_id: str | None = Depends(get_current_user_id)):
