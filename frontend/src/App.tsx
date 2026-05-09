@@ -280,6 +280,7 @@ function App() {
         if (res.ok) {
           setRecipesList(prev => prev.filter(r => r.id !== id));
           setSelectedRecipe(null);
+          window.location.hash = ''; // Redirect to home to clear the hash
         } else {
           toast.error('Неможливо видалити рецепт.');
         }
