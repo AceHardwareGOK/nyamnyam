@@ -6,3 +6,4 @@ supabase
 python-dotenv
 ffmpeg-python
 pydantic
+python-multipart
