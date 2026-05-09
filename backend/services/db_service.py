@@ -120,10 +120,15 @@ def get_recipe_by_id(recipe_id: str) -> dict:
         print(f"Failed to fetch recipe {recipe_id}: {e}")
         return {}
 
-def delete_recipe(recipe_id: str, user_id: str) -> bool:
+def delete_recipe(recipe_id: str, user_id: str | None) -> bool:
     if not supabase: return False
     try:
-        res = supabase.table("recipes").delete().eq("id", recipe_id).eq("user_id", user_id).execute()
+        query = supabase.table("recipes").delete().eq("id", recipe_id)
+        if user_id:
+            query = query.eq("user_id", user_id)
+        else:
+            query = query.is_("user_id", "null")
+        res = query.execute()
         return True # if no error
     except Exception as e:
         print("Delete error:", e)
@@ -138,7 +143,7 @@ def delete_all_recipes(user_id: str) -> bool:
         print("Delete all error:", e)
         return False
 
-def update_recipe(recipe_id: str, user_id: str, data: dict) -> bool:
+def update_recipe(recipe_id: str, user_id: str | None, data: dict) -> bool:
     if not supabase: return False
     try:
         # Update main table
@@ -150,7 +155,13 @@ def update_recipe(recipe_id: str, user_id: str, data: dict) -> bool:
         if "main_image_url" in data and data["main_image_url"]:
             update_data["main_image_url"] = data["main_image_url"]
             
-        res = supabase.table("recipes").update(update_data).eq("id", recipe_id).eq("user_id", user_id).execute()
+        query = supabase.table("recipes").update(update_data).eq("id", recipe_id)
+        if user_id:
+            query = query.eq("user_id", user_id)
+        else:
+            query = query.is_("user_id", "null")
+            
+        res = query.execute()
         if not res.data:
             return False
             

@@ -125,8 +125,6 @@ def extract_recipe(req: ExtractRequest, user_id: str | None = Depends(get_curren
 
 @router.delete("/recipes/{recipe_id}")
 def delete_recipe_route(recipe_id: str, user_id: str | None = Depends(get_current_user_id)):
-    if not user_id:
-        raise HTTPException(status_code=401, detail="Unauthorized")
     success = delete_recipe(recipe_id, user_id)
     if not success:
         raise HTTPException(status_code=403, detail="Не вдалося видалити рецепт (можливо, він вам не належить)")
@@ -151,8 +149,6 @@ class UpdateRecipeRequest(BaseModel):
 
 @router.put("/recipes/{recipe_id}")
 def update_recipe_route(recipe_id: str, req: UpdateRecipeRequest, user_id: str | None = Depends(get_current_user_id)):
-    if not user_id:
-        raise HTTPException(status_code=401, detail="Unauthorized")
     success = update_recipe(recipe_id, user_id, req.model_dump())
     if not success:
         raise HTTPException(status_code=403, detail="Не вдалося оновити рецепт")
