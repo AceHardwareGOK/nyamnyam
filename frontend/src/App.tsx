@@ -4,6 +4,8 @@ import './index.css';
 import './App.css';
 import { supabase } from './supabaseClient';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
 // Unused mock variables removed
 
 function CreateRecipeView({ onBack, initialData, onSave }: { onBack: () => void, initialData?: any, onSave: (data: any) => void }) {
@@ -36,7 +38,7 @@ function CreateRecipeView({ onBack, initialData, onSave }: { onBack: () => void,
         headers['Authorization'] = `Bearer ${session.access_token}`;
       }
 
-      const res = await fetch('http://localhost:8000/api/upload-image', {
+      const res = await fetch(`${API_URL}/api/upload-image`, {
         method: 'POST',
         headers,
         body: formData
@@ -329,7 +331,7 @@ function App() {
 
   useEffect(() => {
     if (activeTab === 'recipes' || activeTab === 'home') {
-      fetch('http://localhost:8000/api/recipes', {
+      fetch(`${API_URL}/api/recipes`, {
         headers: getHeaders()
       })
         .then(res => res.json())
@@ -396,7 +398,7 @@ function App() {
 
   const fetchRecipeDetails = async (id: string) => {
     try {
-      const response = await fetch(`http://localhost:8000/api/recipes/${id}`, {
+      const response = await fetch(`${API_URL}/api/recipes/${id}`, {
         headers: getHeaders()
       });
       if (!response.ok) throw new Error("Failed to fetch recipe");
@@ -448,7 +450,7 @@ function App() {
     setIsLoading(true);
     
     try {
-      const response = await fetch('http://localhost:8000/api/extract', {
+      const response = await fetch(`${API_URL}/api/extract`, {
         method: 'POST',
         headers: getHeaders(),
         body: JSON.stringify({ url })
@@ -478,7 +480,7 @@ function App() {
   const handleDelete = async (id: string) => {
     showConfirm('Підтвердження видалення', 'Ви дійсно хочете видалити цей рецепт?', async () => {
       try {
-        const res = await fetch(`http://localhost:8000/api/recipes/${id}`, {
+        const res = await fetch(`${API_URL}/api/recipes/${id}`, {
           method: 'DELETE',
           headers: getHeaders()
         });
@@ -498,7 +500,7 @@ function App() {
   const handleDeleteAll = async () => {
     showConfirm('Видалення всіх рецептів', 'Ви дійсно хочете видалити всі свої рецепти? Цю дію неможливо скасувати.', async () => {
       try {
-        const res = await fetch(`http://localhost:8000/api/recipes`, {
+        const res = await fetch(`${API_URL}/api/recipes`, {
           method: 'DELETE',
           headers: getHeaders()
         });
@@ -517,7 +519,7 @@ function App() {
 
   const handleShare = async (id: string) => {
     try {
-      const res = await fetch(`http://localhost:8000/api/recipes/${id}/share`, {
+      const res = await fetch(`${API_URL}/api/recipes/${id}/share`, {
         method: 'POST',
         headers: getHeaders()
       });
@@ -534,7 +536,7 @@ function App() {
   const handleEditSave = async (data: any) => {
     if (!selectedRecipe) return;
     try {
-      const res = await fetch(`http://localhost:8000/api/recipes/${selectedRecipe.id}`, {
+      const res = await fetch(`${API_URL}/api/recipes/${selectedRecipe.id}`, {
         method: 'PUT',
         headers: getHeaders(),
         body: JSON.stringify(data)
