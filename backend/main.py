@@ -9,8 +9,8 @@ app = FastAPI(title="NyamNyam Recipe API")
 origins = [
     "http://localhost:5173", # Vite default
     "http://127.0.0.1:5173",
-    "http://localhost:3000",
 ]
+
 
 # Read CORS origins from env if available
 env_origins = os.getenv("CORS_ORIGINS")
