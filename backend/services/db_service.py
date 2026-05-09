@@ -1,6 +1,9 @@
 import os
 from supabase import create_client, Client
 from config import SUPABASE_URL, SUPABASE_KEY
+import logging
+
+logger = logging.getLogger(__name__)
 from services.ai_service import RecipeExtraction
 
 if SUPABASE_URL and SUPABASE_KEY:
@@ -13,7 +16,7 @@ def upload_image(filepath: str, bucket_name: str = "recipes_media") -> str:
     Uploads a local image file to Supabase Storage and returns its public URL.
     """
     if not supabase:
-        print("Supabase client not initialized. Skipping image upload.")
+        logger.warning("Supabase client not initialized. Skipping image upload.")
         return ""
     
     filename = os.path.basename(filepath)
@@ -29,7 +32,7 @@ def upload_image(filepath: str, bucket_name: str = "recipes_media") -> str:
         public_url = supabase.storage.from_(bucket_name).get_public_url(filename)
         return public_url
     except Exception as e:
-        print(f"Failed to upload image {filename} to Supabase: {e}")
+        logger.error(f"Failed to upload image {filename} to Supabase: {e}", exc_info=True)
         return ""
 
 def save_recipe(recipe: RecipeExtraction, step_images: list[str], source_url: str = "", user_id: str = None, main_image_url: str = "") -> dict:
@@ -37,7 +40,7 @@ def save_recipe(recipe: RecipeExtraction, step_images: list[str], source_url: st
     Saves the extracted recipe and associated images to the Supabase Postgres database.
     """
     if not supabase:
-        print("Supabase client not initialized. Skipping DB insert.")
+        logger.warning("Supabase client not initialized. Skipping DB insert.")
         return {"id": "mock-uuid", "title": recipe.title}
         
     try:
@@ -79,7 +82,7 @@ def save_recipe(recipe: RecipeExtraction, step_images: list[str], source_url: st
             
         return {"id": recipe_id, "title": recipe.title}
     except Exception as e:
-        print(f"Database save error: {e}")
+        logger.error(f"Database save error: {e}", exc_info=True)
         raise Exception(f"Failed to save recipe to database: {str(e)}")
 
 def get_all_recipes(user_id: str = None) -> list:
@@ -98,7 +101,7 @@ def get_all_recipes(user_id: str = None) -> list:
         response = query.execute()
         return response.data
     except Exception as e:
-        print(f"Failed to fetch recipes: {e}")
+        logger.error(f"Failed to fetch recipes: {e}", exc_info=True)
         return []
 
 def get_recipe_by_id(recipe_id: str) -> dict:
@@ -117,7 +120,7 @@ def get_recipe_by_id(recipe_id: str) -> dict:
         
         return recipe
     except Exception as e:
-        print(f"Failed to fetch recipe {recipe_id}: {e}")
+        logger.error(f"Failed to fetch recipe {recipe_id}: {e}", exc_info=True)
         return {}
 
 def delete_recipe(recipe_id: str, user_id: str | None) -> bool:
@@ -131,7 +134,7 @@ def delete_recipe(recipe_id: str, user_id: str | None) -> bool:
         res = query.execute()
         return True # if no error
     except Exception as e:
-        print("Delete error:", e)
+        logger.error(f"Delete error: {e}", exc_info=True)
         return False
 
 def delete_all_recipes(user_id: str) -> bool:
@@ -140,7 +143,7 @@ def delete_all_recipes(user_id: str) -> bool:
         res = supabase.table("recipes").delete().eq("user_id", user_id).execute()
         return True # if no error
     except Exception as e:
-        print("Delete all error:", e)
+        logger.error(f"Delete all error: {e}", exc_info=True)
         return False
 
 def update_recipe(recipe_id: str, user_id: str | None, data: dict) -> bool:
@@ -185,7 +188,7 @@ def update_recipe(recipe_id: str, user_id: str | None, data: dict) -> bool:
             supabase.table("recipe_steps").insert(steps_data).execute()
         return True
     except Exception as e:
-        print("Update error:", e)
+        logger.error(f"Update error: {e}", exc_info=True)
         return False
 
 def make_recipe_public(recipe_id: str, user_id: str) -> bool:
@@ -194,5 +197,43 @@ def make_recipe_public(recipe_id: str, user_id: str) -> bool:
         supabase.table("recipes").update({"is_public": True}).eq("id", recipe_id).eq("user_id", user_id).execute()
         return True
     except Exception as e:
-        print("Share error:", e)
+        logger.error(f"Share error: {e}", exc_info=True)
         return False
+
+def create_job(job_id: str, user_id: str | None = None) -> bool:
+    if not supabase: return False
+    try:
+        supabase.table("extraction_jobs").insert({
+            "id": job_id,
+            "status": "pending",
+            "message": "Завдання в черзі",
+            "user_id": user_id
+        }).execute()
+        return True
+    except Exception as e:
+        logger.error(f"Create job error: {e}", exc_info=True)
+        return False
+
+def update_job(job_id: str, status: str, message: str, error: str | None = None, recipe_id: str | None = None) -> bool:
+    if not supabase: return False
+    try:
+        update_data = {"status": status, "message": message}
+        if error is not None: update_data["error"] = error
+        if recipe_id is not None: update_data["recipe_id"] = recipe_id
+        
+        supabase.table("extraction_jobs").update(update_data).eq("id", job_id).execute()
+        return True
+    except Exception as e:
+        logger.error(f"Update job error: {e}", exc_info=True)
+        return False
+
+def get_job(job_id: str) -> dict | None:
+    if not supabase: return None
+    try:
+        res = supabase.table("extraction_jobs").select("*").eq("id", job_id).execute()
+        if res and res.data and len(res.data) > 0:
+            return res.data[0]
+        return None
+    except Exception as e:
+        logger.error(f"Get job error: {e}", exc_info=True)
+        return None

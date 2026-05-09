@@ -7,3 +7,4 @@ python-dotenv
 ffmpeg-python
 pydantic
 python-multipart
+slowapi

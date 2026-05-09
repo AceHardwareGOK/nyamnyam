@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, Header, Depends, UploadFile, File
+from fastapi import APIRouter, HTTPException, Header, Depends, UploadFile, File, Request
 from pydantic import BaseModel
 import os
 import shutil
@@ -6,18 +6,38 @@ import shutil
 from services.video_service import download_video
 from services.ai_service import extract_recipe_from_video
 from services.media_service import extract_screenshots
-from services.db_service import upload_image, save_recipe, get_all_recipes, get_recipe_by_id, supabase, delete_recipe, delete_all_recipes, update_recipe, make_recipe_public
+from services.db_service import upload_image, save_recipe, get_all_recipes, get_recipe_by_id, supabase, delete_recipe, delete_all_recipes, update_recipe, make_recipe_public, create_job, update_job, get_job
 
 router = APIRouter()
+
+import time
+from pydantic import BaseModel, HttpUrl
+from limiter import limiter
+import logging
+
+logger = logging.getLogger(__name__)
+
+auth_cache = {}
+AUTH_CACHE_TTL = 300 # 5 minutes
 
 def get_current_user_id(authorization: str = Header(None)) -> str | None:
     if not authorization or not authorization.startswith("Bearer "):
         return None
     token = authorization.split(" ")[1]
+    
+    now = time.time()
+    if token in auth_cache:
+        user_id, expiry = auth_cache[token]
+        if now < expiry:
+            return user_id
+        else:
+            del auth_cache[token]
+
     try:
         # Use our existing supabase client to parse the token
         res = supabase.auth.get_user(token)
         if res and res.user:
+            auth_cache[token] = (res.user.id, now + AUTH_CACHE_TTL)
             return res.user.id
     except Exception as e:
         print("Auth error:", e)
@@ -60,68 +80,81 @@ def get_recipe(recipe_id: str):
     return {"status": "success", "data": recipe}
 
 class ExtractRequest(BaseModel):
-    url: str
+    url: HttpUrl
 
-@router.post("/extract")
-def extract_recipe(req: ExtractRequest, user_id: str | None = Depends(get_current_user_id)):
+from fastapi import BackgroundTasks
+import uuid
+
+# No need for in-memory extraction_jobs anymore
+
+def process_extraction_job(job_id: str, url: str, user_id: str | None):
     video_path = None
     try:
-        # 1. Download video & extract description
-        print(f"Downloading video from {req.url}...")
-        video_path, description = download_video(req.url)
+        update_job(job_id, "processing", "Завантаження відео...")
+        logger.info(f"[{job_id}] Downloading video from {url}...")
+        video_path, description = download_video(url)
         
-        # 2. Extract recipe via AI
-        print("Extracting recipe via Gemini AI...")
+        update_job(job_id, "processing", "Аналіз відео за допомогою ШІ...")
+        logger.info(f"[{job_id}] Extracting recipe via Gemini AI...")
         recipe = extract_recipe_from_video(video_path, description)
         
-        # 3. Extract screenshots using timestamps
-        print("Extracting screenshots via ffmpeg...")
+        update_job(job_id, "processing", "Створення скріншотів кроків...")
+        logger.info(f"[{job_id}] Extracting screenshots via ffmpeg...")
         timestamps = [step.timestamp_seconds for step in recipe.steps]
         timestamps.append(recipe.final_result_timestamp_seconds)
         local_images = extract_screenshots(video_path, timestamps)
         
-        # 4. Upload images to Supabase
-        print("Uploading images to Supabase...")
+        update_job(job_id, "processing", "Завантаження зображень у хмару...")
+        logger.info(f"[{job_id}] Uploading images to Supabase...")
         public_image_urls = []
         for img_path in local_images:
             if img_path and os.path.exists(img_path):
                 public_url = upload_image(img_path)
                 public_image_urls.append(public_url)
-                # Cleanup local image
                 os.remove(img_path)
             else:
                 public_image_urls.append("")
                 
-        # 5. Save to database
-        print("Saving recipe to Database...")
-        # The last image is the main image
+        update_job(job_id, "processing", "Збереження рецепта...")
+        logger.info(f"[{job_id}] Saving recipe to Database...")
         step_public_urls = public_image_urls[:-1] if public_image_urls else []
         main_image_url = public_image_urls[-1] if public_image_urls else ""
         
-        saved_data = save_recipe(recipe, step_public_urls, req.url, user_id, main_image_url)
+        saved_data = save_recipe(recipe, step_public_urls, url, user_id, main_image_url)
         
-        # Inject image URLs into the returned recipe object
         recipe_dict = recipe.model_dump()
         for i, step in enumerate(recipe_dict["steps"]):
             step["image_url"] = step_public_urls[i] if i < len(step_public_urls) else ""
             
         recipe_dict["main_image_url"] = main_image_url
             
-        # Return complete recipe to frontend
-        return {
-            "status": "success",
-            "message": "Рецепт успішно згенеровано",
-            "data": recipe_dict,
-            "db_info": saved_data
-        }
+        update_job(job_id, "success", "Рецепт успішно згенеровано", recipe_id=saved_data.get("id"))
         
     except Exception as e:
-        print(f"Extraction error: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        logger.error(f"[{job_id}] Extraction error: {e}", exc_info=True)
+        update_job(job_id, "error", "Внутрішня помилка", error=str(e))
     finally:
-        # Cleanup video file
         if video_path and os.path.exists(video_path):
             os.remove(video_path)
+
+@router.post("/extract")
+@limiter.limit("5/minute")
+def extract_recipe(request: Request, req: ExtractRequest, background_tasks: BackgroundTasks, user_id: str | None = Depends(get_current_user_id)):
+    job_id = str(uuid.uuid4())
+    create_job(job_id, user_id)
+    background_tasks.add_task(process_extraction_job, job_id, str(req.url), user_id)
+    return {"status": "success", "job_id": job_id}
+
+@router.get("/extract/status/{job_id}")
+def get_extraction_status(job_id: str):
+    job = get_job(job_id)
+    if not job:
+        raise HTTPException(status_code=404, detail="Завдання не знайдено")
+    
+    res = {"status": job["status"], "message": job["message"]}
+    if job.get("error"): res["error"] = job["error"]
+    if job.get("recipe_id"): res["db_info"] = {"id": job["recipe_id"]}
+    return res
 
 @router.delete("/recipes/{recipe_id}")
 def delete_recipe_route(recipe_id: str, user_id: str | None = Depends(get_current_user_id)):
