@@ -4,60 +4,7 @@ import './index.css';
 import './App.css';
 import { supabase } from './supabaseClient';
 
-// Mock data for recent recipes
-const RECENT_RECIPES = [
-  {
-    id: 1,
-    title: "Пухкі сирники з ваніллю",
-    time: "20 хв",
-    image: "https://images.unsplash.com/photo-1574783756547-258b3c720fe9?auto=format&fit=crop&q=80&w=400"
-  },
-  {
-    id: 2,
-    title: "Паста Карбонара за 15 хвилин",
-    time: "15 хв",
-    image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&q=80&w=400"
-  }
-];
-
-const MOCK_RECIPE_DETAIL = {
-  id: 1,
-  title: "Пухкі сирники з ваніллю",
-  time: "20 хв",
-  servings: 2,
-  originalUrl: "https://tiktok.com/@user/video/123",
-  image: "https://images.unsplash.com/photo-1574783756547-258b3c720fe9?auto=format&fit=crop&q=80&w=800",
-  ingredients: [
-    "Сир кисломолочний (9%) - 400 г",
-    "Яйце - 1 шт",
-    "Цукор - 2 ст. л.",
-    "Ванільний цукор - 1 ч. л.",
-    "Борошно - 2 ст. л.",
-    "Олія для смаження"
-  ],
-  steps: [
-    {
-      stepNumber: 1,
-      text: "Перетріть сир через сито або збийте блендером для однорідної маси без грудочок.",
-      image: "https://images.unsplash.com/photo-1621304523996-3c589b27b3fa?auto=format&fit=crop&q=80&w=400"
-    },
-    {
-      stepNumber: 2,
-      text: "Додайте яйце, звичайний та ванільний цукор. Добре перемішайте.",
-      image: "https://images.unsplash.com/photo-1588675402636-6e7921820b32?auto=format&fit=crop&q=80&w=400"
-    },
-    {
-      stepNumber: 3,
-      text: "Додайте борошно і замісіть тісто. Сформуйте сирники, обвалюючи їх у борошні.",
-      image: "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?auto=format&fit=crop&q=80&w=400"
-    },
-    {
-      stepNumber: 4,
-      text: "Смажте на розігрітій сковороді з невеликою кількістю олії до золотистої скоринки з обох сторін.",
-      image: "https://images.unsplash.com/photo-1574783756547-258b3c720fe9?auto=format&fit=crop&q=80&w=400"
-    }
-  ]
-};
+// Unused mock variables removed
 
 function CreateRecipeView({ onBack, initialData, onSave }: { onBack: () => void, initialData?: any, onSave: (data: any) => void }) {
   const [title, setTitle] = useState(initialData?.title || '');
@@ -319,7 +266,6 @@ function CreateRecipeView({ onBack, initialData, onSave }: { onBack: () => void,
 function App() {
   const [url, setUrl] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [isFetchingDetails, setIsFetchingDetails] = useState(false);
   const [activeTab, setActiveTab] = useState('home'); // 'home' | 'recipes' | 'settings' | 'create'
   const [selectedRecipe, setSelectedRecipe] = useState<any | null>(null);
   const [theme, setTheme] = useState<'light' | 'dark' | 'system'>(() => {
@@ -449,7 +395,6 @@ function App() {
   }, [session, selectedRecipe]);
 
   const fetchRecipeDetails = async (id: string) => {
-    setIsFetchingDetails(true);
     try {
       const response = await fetch(`http://localhost:8000/api/recipes/${id}`, {
         headers: getHeaders()
@@ -483,8 +428,6 @@ function App() {
     } catch (error) {
       console.error(error);
       showAlert('Помилка', "Не вдалося завантажити деталі рецепту.");
-    } finally {
-      setIsFetchingDetails(false);
     }
   };
 
@@ -517,24 +460,7 @@ function App() {
       
       const result = await response.json();
       
-      // Transform API response to match our frontend mock structure
-      const newRecipe = {
-        id: result.db_info.id,
-        title: result.data.title,
-        time: `${result.data.time_minutes} хв`,
-        servings: result.data.servings,
-        originalUrl: url,
-        image: result.data.main_image_url || (result.data.steps.length > 0 && result.data.steps[result.data.steps.length - 1].image_url) 
-          ? (result.data.main_image_url || result.data.steps[result.data.steps.length - 1].image_url)
-          : "https://images.unsplash.com/photo-1574783756547-258b3c720fe9?auto=format&fit=crop&q=80&w=800",
-        ingredients: result.data.ingredients,
-        steps: result.data.steps.map((step: any, idx: number) => ({
-          stepNumber: idx + 1,
-          text: step.instruction,
-          image: step.image_url || ""
-        }))
-      };
-      
+      // Transform API response
       setUrl('');
       window.location.hash = `recipe-${result.db_info.id}`;
     } catch (error) {
@@ -858,7 +784,7 @@ function App() {
             </div>
           </div>
         ) : activeTab === 'create' ? (
-          <CreateRecipeView onBack={() => { window.location.hash = ''; }} onSave={(data) => showAlert('Інфо', 'Створення в розробці...')} />
+          <CreateRecipeView onBack={() => { window.location.hash = ''; }} onSave={() => showAlert('Інфо', 'Створення в розробці...')} />
         ) : activeTab === 'edit' && selectedRecipe ? (
           <CreateRecipeView initialData={selectedRecipe} onBack={() => { window.location.hash = `recipe-${selectedRecipe.id}`; }} onSave={handleEditSave} />
         ) : (
