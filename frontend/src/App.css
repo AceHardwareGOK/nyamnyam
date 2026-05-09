@@ -1029,3 +1029,116 @@
 .pulse {
   animation: skeleton-loading 1.5s ease-in-out infinite alternate;
 }
+
+/* ==========================================================================
+   Responsive Mobile Layout
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  /* Layout constraints */
+  .header {
+    padding: var(--space-md);
+  }
+
+  .logo span {
+    font-size: 1.25rem;
+  }
+
+  .main-content {
+    padding-top: var(--space-md);
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+    padding-bottom: calc(var(--space-xl) + 6rem); /* Space for bottom nav */
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  /* Touch Targets & URL Form */
+  .input-group {
+    flex-direction: column;
+    padding: 0.75rem;
+    gap: 0.75rem;
+    border-radius: 16px;
+  }
+
+  .input-group input {
+    min-height: 48px;
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem;
+  }
+
+  .btn-primary, .btn-secondary, .settings-action-btn {
+    min-height: 48px; /* Minimum touch target size */
+    width: 100%;
+    justify-content: center;
+  }
+
+  .input-group .btn-primary {
+    width: 100%;
+  }
+
+  .hero-divider {
+    margin: var(--space-lg) 0;
+  }
+
+  /* Grids */
+  .recipes-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  /* Recipe Detail View */
+  .detail-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .detail-title {
+    font-size: 2rem;
+  }
+
+  .recipe-actions {
+    flex-direction: column;
+  }
+
+  .detail-hero-image {
+    height: 250px;
+    /* Break out of container padding for full width image */
+    margin-left: calc(-1 * var(--space-md));
+    margin-right: calc(-1 * var(--space-md));
+    border-radius: 0;
+  }
+
+  .instruction-step {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .step-number {
+    align-self: flex-start;
+  }
+
+  /* Generation Progress View */
+  .generation-progress-card {
+    padding: var(--space-md);
+  }
+
+  /* Modals */
+  .modal-fade-in {
+    width: 90% !important;
+    padding: 1.5rem !important;
+  }
+  
+  .modal-fade-in > div {
+    flex-direction: column;
+  }
+}
