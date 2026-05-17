@@ -9,6 +9,14 @@ export function CreateRecipeView({ onBack, initialData, onSave }: { onBack: () =
   const [title, setTitle] = useState(initialData?.title || '');
   const [time, setTime] = useState(initialData?.time ? initialData.time.replace(' хв', '') : '');
   const [servings, setServings] = useState(initialData?.servings || '');
+  const [calories100g, setCalories100g] = useState(initialData?.calories_100g || '');
+  const [protein100g, setProtein100g] = useState(initialData?.protein_100g || '');
+  const [fat100g, setFat100g] = useState(initialData?.fat_100g || '');
+  const [carbs100g, setCarbs100g] = useState(initialData?.carbs_100g || '');
+  const [caloriesServing, setCaloriesServing] = useState(initialData?.calories_serving || '');
+  const [proteinServing, setProteinServing] = useState(initialData?.protein_serving || '');
+  const [fatServing, setFatServing] = useState(initialData?.fat_serving || '');
+  const [carbsServing, setCarbsServing] = useState(initialData?.carbs_serving || '');
   const [ingredients, setIngredients] = useState<string[]>(initialData?.ingredients?.length ? initialData.ingredients : ['']);
   const [steps, setSteps] = useState<{text: string, image?: string}[]>(initialData?.steps?.length ? initialData.steps.map((s:any) => ({text: s.text, image: s.image})) : [{ text: '' }]);
   const [mainImage, setMainImage] = useState<string>(initialData?.image || '');
@@ -81,8 +89,16 @@ export function CreateRecipeView({ onBack, initialData, onSave }: { onBack: () =
   const handleSubmit = () => {
     onSave({
       title,
-      time_minutes: parseInt(time) || 0,
+      time_minutes: parseInt(time as string) || 0,
       servings: parseInt(servings as string) || 1,
+      calories_100g: parseInt(calories100g as string) || 0,
+      protein_100g: parseInt(protein100g as string) || 0,
+      fat_100g: parseInt(fat100g as string) || 0,
+      carbs_100g: parseInt(carbs100g as string) || 0,
+      calories_serving: parseInt(caloriesServing as string) || 0,
+      protein_serving: parseInt(proteinServing as string) || 0,
+      fat_serving: parseInt(fatServing as string) || 0,
+      carbs_serving: parseInt(carbsServing as string) || 0,
       ingredients: ingredients.filter(i => i.trim()),
       steps: steps.filter(s => s.text.trim()),
       main_image_url: mainImage
@@ -151,6 +167,40 @@ export function CreateRecipeView({ onBack, initialData, onSave }: { onBack: () =
             value={servings} 
             onChange={(e) => setServings(e.target.value)} 
           />
+        </div>
+      </div>
+
+      <div className="form-section">
+        <label className="form-label">Харчова цінність (КБЖВ)</label>
+        <div style={{ marginBottom: '8px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>На 100 г:</div>
+        <div className="form-row" style={{ marginBottom: '1rem' }}>
+          <div className="form-group">
+            <input type="number" className="form-input" placeholder="Ккал" value={calories100g} onChange={e => setCalories100g(e.target.value)} title="Калорії (100г)" />
+          </div>
+          <div className="form-group">
+            <input type="number" className="form-input" placeholder="Білки, г" value={protein100g} onChange={e => setProtein100g(e.target.value)} title="Білки (100г)" />
+          </div>
+          <div className="form-group">
+            <input type="number" className="form-input" placeholder="Жири, г" value={fat100g} onChange={e => setFat100g(e.target.value)} title="Жири (100г)" />
+          </div>
+          <div className="form-group">
+            <input type="number" className="form-input" placeholder="Вугл., г" value={carbs100g} onChange={e => setCarbs100g(e.target.value)} title="Вуглеводи (100г)" />
+          </div>
+        </div>
+        <div style={{ marginBottom: '8px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>На порцію:</div>
+        <div className="form-row">
+          <div className="form-group">
+            <input type="number" className="form-input" placeholder="Ккал" value={caloriesServing} onChange={e => setCaloriesServing(e.target.value)} title="Калорії (порція)" />
+          </div>
+          <div className="form-group">
+            <input type="number" className="form-input" placeholder="Білки, г" value={proteinServing} onChange={e => setProteinServing(e.target.value)} title="Білки (порція)" />
+          </div>
+          <div className="form-group">
+            <input type="number" className="form-input" placeholder="Жири, г" value={fatServing} onChange={e => setFatServing(e.target.value)} title="Жири (порція)" />
+          </div>
+          <div className="form-group">
+            <input type="number" className="form-input" placeholder="Вугл., г" value={carbsServing} onChange={e => setCarbsServing(e.target.value)} title="Вуглеводи (порція)" />
+          </div>
         </div>
       </div>
 

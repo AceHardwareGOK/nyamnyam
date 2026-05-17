@@ -52,7 +52,15 @@ def save_recipe(recipe: RecipeExtraction, step_images: list[str], source_url: st
             "servings": recipe.servings,
             "user_id": user_id,
             "is_public": False,
-            "main_image_url": main_image_url
+            "main_image_url": main_image_url,
+            "calories_100g": recipe.nutrition.calories_100g,
+            "protein_100g": recipe.nutrition.protein_100g,
+            "fat_100g": recipe.nutrition.fat_100g,
+            "carbs_100g": recipe.nutrition.carbs_100g,
+            "calories_serving": recipe.nutrition.calories_serving,
+            "protein_serving": recipe.nutrition.protein_serving,
+            "fat_serving": recipe.nutrition.fat_serving,
+            "carbs_serving": recipe.nutrition.carbs_serving
         }
         
         recipe_response = supabase.table("recipes").insert(recipe_data).execute()
@@ -153,8 +161,17 @@ def update_recipe(recipe_id: str, user_id: str | None, data: dict) -> bool:
         update_data = {
             "title": data.get("title"),
             "time_minutes": data.get("time_minutes"),
-            "servings": data.get("servings")
+            "servings": data.get("servings"),
+            "calories_100g": data.get("calories_100g", 0),
+            "protein_100g": data.get("protein_100g", 0),
+            "fat_100g": data.get("fat_100g", 0),
+            "carbs_100g": data.get("carbs_100g", 0),
+            "calories_serving": data.get("calories_serving", 0),
+            "protein_serving": data.get("protein_serving", 0),
+            "fat_serving": data.get("fat_serving", 0),
+            "carbs_serving": data.get("carbs_serving", 0)
         }
+
         if "main_image_url" in data and data["main_image_url"]:
             update_data["main_image_url"] = data["main_image_url"]
             

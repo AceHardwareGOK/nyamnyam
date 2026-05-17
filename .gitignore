@@ -5,3 +5,10 @@ venv/
 *.pyc
 temp_videos/
 *.md
+
+# Unnecessary files & scratchpads
+backend/dump.json
+backend/temp_carousel/
+*.mp4
+run_browser.py
+backend/test_*.py

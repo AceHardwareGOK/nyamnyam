@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Clock, Users, ExternalLink, Edit2, Share2, Trash2, ArrowLeft } from 'lucide-react';
 import type { Recipe } from '../types';
 
@@ -10,6 +11,8 @@ interface RecipeDetailViewProps {
 }
 
 export function RecipeDetailView({ recipe, onBack, onEdit, onShare, onDelete }: RecipeDetailViewProps) {
+  const [nutritionTab, setNutritionTab] = useState<'100g' | 'serving'>('100g');
+
   return (
     <div className="recipe-detail-view fade-in">
       <button className="btn-back" onClick={onBack}>
@@ -34,6 +37,54 @@ export function RecipeDetailView({ recipe, onBack, onEdit, onShare, onDelete }: 
       <div className="detail-hero-image" style={{ backgroundImage: `url(${recipe.image})` }}></div>
 
       <div className="detail-content">
+        {(recipe.calories_100g !== undefined) && (
+          <div className="nutrition-section">
+            <div className="nutrition-header">
+              <h3 className="section-title">Харчова цінність</h3>
+              <div className="nutrition-tabs">
+                <button 
+                  className={`nutrition-tab ${nutritionTab === '100g' ? 'active' : ''}`}
+                  onClick={() => setNutritionTab('100g')}
+                >
+                  На 100 г
+                </button>
+                <button 
+                  className={`nutrition-tab ${nutritionTab === 'serving' ? 'active' : ''}`}
+                  onClick={() => setNutritionTab('serving')}
+                >
+                  На порцію
+                </button>
+              </div>
+            </div>
+            
+            <div className="nutrition-grid">
+              <div className="nutrition-item">
+                <span className="nutrition-value">
+                  {nutritionTab === '100g' ? (recipe.calories_100g || 0) : (recipe.calories_serving || 0)}
+                </span>
+                <span className="nutrition-label">ккал</span>
+              </div>
+              <div className="nutrition-item">
+                <span className="nutrition-value">
+                  {nutritionTab === '100g' ? (recipe.protein_100g || 0) : (recipe.protein_serving || 0)}
+                </span>
+                <span className="nutrition-label">Білки, г</span>
+              </div>
+              <div className="nutrition-item">
+                <span className="nutrition-value">
+                  {nutritionTab === '100g' ? (recipe.fat_100g || 0) : (recipe.fat_serving || 0)}
+                </span>
+                <span className="nutrition-label">Жири, г</span>
+              </div>
+              <div className="nutrition-item">
+                <span className="nutrition-value">
+                  {nutritionTab === '100g' ? (recipe.carbs_100g || 0) : (recipe.carbs_serving || 0)}
+                </span>
+                <span className="nutrition-label">Вуглеводи, г</span>
+              </div>
+            </div>
+          </div>
+        )}
         <div className="ingredients-section">
           <h3 className="section-title">Інгредієнти</h3>
           <ul className="ingredients-list">

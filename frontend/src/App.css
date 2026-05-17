@@ -921,7 +921,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-md);
 }
 
 .step-item {
@@ -1140,5 +1140,83 @@
   
   .modal-fade-in > div {
     flex-direction: column;
+  }
+}
+
+/* Nutrition Styles */
+.nutrition-section {
+  margin-bottom: 2rem;
+}
+
+.nutrition-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.nutrition-header .section-title {
+  margin-bottom: 0;
+}
+
+.nutrition-tabs {
+  display: flex;
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 0.25rem;
+  border: 1px solid var(--border-color);
+}
+
+.nutrition-tab {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nutrition-tab.active {
+  background: var(--bg-color);
+  color: var(--accent-color);
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.nutrition-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.nutrition-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.nutrition-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 0.25rem;
+}
+
+.nutrition-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 600px) {
+  .nutrition-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

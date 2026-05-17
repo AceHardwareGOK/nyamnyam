@@ -17,12 +17,72 @@ def resolve_tiktok_shortlink(url: str) -> str:
             return url
     return url
 
-def download_video(url: str) -> tuple[str, str]:
+import subprocess
+
+def download_tiktok_carousel(url: str, output_dir: str = "temp_videos") -> tuple[str, str]:
     """
-    Downloads a video from the given URL and extracts its description.
-    Returns a tuple of (filepath, description).
+    Fetches TikTok carousel images via tikwm API and stitches them into a video.
     """
+    import requests
+    
+    # Tikwm API call
+    res = requests.get(f"https://tikwm.com/api/?url={url}")
+    data = res.json()
+    if data.get('code') != 0:
+        raise Exception("Помилка завантаження каруселі: API повернув помилку")
+        
+    images = data.get('data', {}).get('images', [])
+    desc = data.get('data', {}).get('title', '')
+    
+    if not images:
+        raise Exception("Не знайдено фотографій у цій каруселі")
+        
+    os.makedirs(output_dir, exist_ok=True)
+    job_id = str(uuid.uuid4())
+    temp_img_dir = os.path.join(output_dir, f"carousel_{job_id}")
+    os.makedirs(temp_img_dir, exist_ok=True)
+    
+    try:
+        # Download images
+        for i, img_url in enumerate(images):
+            r = requests.get(img_url)
+            with open(os.path.join(temp_img_dir, f"img{i:03d}.jpg"), "wb") as f:
+                f.write(r.content)
+                
+        out_path = os.path.join(output_dir, f"{job_id}.mp4")
+        
+        # Stitch using ffmpeg (3 seconds per image)
+        cmd = [
+            "ffmpeg", "-y",
+            "-framerate", "1/3",
+            "-i", os.path.join(temp_img_dir, "img%03d.jpg"),
+            "-c:v", "libx264",
+            "-vf", "scale=trunc(iw/2)*2:trunc(ih/2)*2,format=yuv420p",
+            "-r", "30",
+            out_path
+        ]
+        
+        # Run ffmpeg, suppress output to not clutter logs
+        subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        
+        return out_path, desc
+    finally:
+        # Clean up temporary images directory
+        import shutil
+        if os.path.exists(temp_img_dir):
+            shutil.rmtree(temp_img_dir)
+
+def download_video(url: str, output_dir: str = "temp_videos") -> tuple[str, str]:
+    """
+    Downloads a video from the given URL using yt-dlp.
+    Returns a tuple of (path_to_video_file, description).
+    """
+    os.makedirs(output_dir, exist_ok=True)
     url = resolve_tiktok_shortlink(url)
+
+    # Check for unsupported TikTok photo carousels
+    if "tiktok.com" in url and "/photo/" in url:
+        return download_tiktok_carousel(url, output_dir)
     
     file_id = str(uuid.uuid4())
     filepath = os.path.join(TEMP_DIR, f"{file_id}.mp4")

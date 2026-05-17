@@ -9,10 +9,21 @@ class RecipeStep(BaseModel):
     instruction: str = Field(description="Детальний опис кроку приготування")
     timestamp_seconds: int = Field(description="Таймкод у секундах, на якому найкраще видно цей крок або інгредієнти для нього.")
 
+class NutritionInfo(BaseModel):
+    calories_100g: int = Field(description="Калорійність (ккал) на 100 грамів. Якщо неможливо визначити, 0")
+    protein_100g: int = Field(description="Білки (г) на 100 грамів. Якщо неможливо визначити, 0")
+    fat_100g: int = Field(description="Жири (г) на 100 грамів. Якщо неможливо визначити, 0")
+    carbs_100g: int = Field(description="Вуглеводи (г) на 100 грамів. Якщо неможливо визначити, 0")
+    calories_serving: int = Field(description="Калорійність (ккал) на одну порцію. Якщо неможливо визначити, 0")
+    protein_serving: int = Field(description="Білки (г) на одну порцію. Якщо неможливо визначити, 0")
+    fat_serving: int = Field(description="Жири (г) на одну порцію. Якщо неможливо визначити, 0")
+    carbs_serving: int = Field(description="Вуглеводи (г) на одну порцію. Якщо неможливо визначити, 0")
+
 class RecipeExtraction(BaseModel):
     title: str = Field(description="Назва страви")
     time_minutes: int = Field(description="Час приготування у хвилинах. Якщо невідомо, використовуйте 0")
     servings: int = Field(description="Кількість порцій. Якщо невідомо, 1")
+    nutrition: NutritionInfo = Field(description="Харчова цінність (КБЖВ)")
     ingredients: List[str] = Field(description="Список інгредієнтів з їх точними пропорціями (особливо зверніть увагу на текстовий опис відео)")
     steps: List[RecipeStep] = Field(description="Покроковий рецепт приготування з таймкодами для скриншотів")
     final_result_timestamp_seconds: int = Field(description="Секунда у відео, де найкраще видно готову страву (фінальний результат)")

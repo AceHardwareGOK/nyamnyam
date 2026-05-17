@@ -1,4 +1,4 @@
-import { Link as LinkIcon, ArrowRight, Plus, Clock } from 'lucide-react';
+import { Link as LinkIcon, ArrowRight, Plus, Clock, Loader2 } from 'lucide-react';
 
 import type { Recipe } from '../types';
 import { GenerationProgressView } from './GenerationProgressView';
@@ -12,9 +12,12 @@ interface HomeViewProps {
   handleTabChange: (tab: string) => void;
   recipesList: Recipe[];
   isFetchingRecipes?: boolean;
+  isLoggedIn: boolean;
+  isAuthInitialized: boolean;
+  loginWithGoogle: () => void;
 }
 
-export function HomeView({ url, setUrl, isLoading, statusMessage, handleSubmit, handleTabChange, recipesList, isFetchingRecipes }: HomeViewProps) {
+export function HomeView({ url, setUrl, isLoading, statusMessage, handleSubmit, handleTabChange, recipesList, isFetchingRecipes, isLoggedIn, isAuthInitialized, loginWithGoogle }: HomeViewProps) {
   return (
     <div className="home-view fade-in">
       <div className="hero">
@@ -23,26 +26,44 @@ export function HomeView({ url, setUrl, isLoading, statusMessage, handleSubmit, 
           Вставте посилання з TikTok, Instagram або YouTube, і ми перетворимо відео на зручний покроковий рецепт із фотографіями.
         </p>
 
-        <form className="url-form" onSubmit={handleSubmit}>
-          <div className="input-group">
-            <LinkIcon size={20} className="input-icon" />
-            <input 
-              type="url" 
-              placeholder="Вставте посилання на відео..." 
-              value={url}
-              onChange={(e) => setUrl(e.target.value)}
-              required
-              disabled={isLoading}
-            />
-            <button type="submit" className="btn-primary" disabled={isLoading}>
-              {isLoading ? 'Обробка...' : <ArrowRight size={20} />}
+        {!isAuthInitialized ? (
+          <div style={{ height: '100px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Loader2 className="spinner" size={28} style={{ color: 'var(--accent-color)' }} />
+          </div>
+        ) : !isLoggedIn ? (
+          <div className="login-prompt fade-in" style={{ 
+            background: 'var(--surface-color)', padding: '2rem', borderRadius: '16px', 
+            border: '1px solid var(--border-color)', display: 'flex', flexDirection: 'column', 
+            alignItems: 'center', gap: '1rem', marginBottom: '2rem'
+          }}>
+            <h3 style={{ margin: 0 }}>Вхід в систему</h3>
+            <p style={{ margin: 0, color: 'var(--text-secondary)', textAlign: 'center', fontSize: '0.95rem' }}>
+              Для збереження та генерації рецептів необхідна безкоштовна авторизація
+            </p>
+            <button className="btn-primary" onClick={loginWithGoogle} style={{ width: '100%', maxWidth: '300px' }}>
+              Увійти через Google
             </button>
           </div>
+        ) : (
+          <form className="url-form" onSubmit={handleSubmit}>
+            <div className="input-group">
+              <LinkIcon size={20} className="input-icon" />
+              <input 
+                type="url" 
+                placeholder="Вставте посилання на відео..." 
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
+                required
+                disabled={isLoading}
+              />
+              <button type="submit" className="btn-primary" disabled={isLoading}>
+                {isLoading ? 'Обробка...' : <ArrowRight size={20} />}
+              </button>
+            </div>
+          </form>
+        )}
 
-          {/* Remove inline progress container, we will show GenerationProgressView below */}
-        </form>
-
-        {!isLoading && (
+        {!isLoading && isLoggedIn && isAuthInitialized && (
           <>
             <div className="hero-divider">
               <span>Або</span>

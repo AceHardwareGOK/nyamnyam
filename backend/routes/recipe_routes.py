@@ -137,9 +137,15 @@ def process_extraction_job(job_id: str, url: str, user_id: str | None):
         if video_path and os.path.exists(video_path):
             os.remove(video_path)
 
+def get_required_user_id(authorization: str = Header(None)) -> str:
+    user_id = get_current_user_id(authorization)
+    if not user_id:
+        raise HTTPException(status_code=401, detail="Unauthorized: Будь ласка, увійдіть в систему")
+    return user_id
+
 @router.post("/extract")
 @limiter.limit("5/minute")
-def extract_recipe(request: Request, req: ExtractRequest, background_tasks: BackgroundTasks, user_id: str | None = Depends(get_current_user_id)):
+def extract_recipe(request: Request, req: ExtractRequest, background_tasks: BackgroundTasks, user_id: str = Depends(get_required_user_id)):
     job_id = str(uuid.uuid4())
     create_job(job_id, user_id)
     background_tasks.add_task(process_extraction_job, job_id, str(req.url), user_id)
@@ -176,6 +182,14 @@ class UpdateRecipeRequest(BaseModel):
     title: str
     time_minutes: int
     servings: int
+    calories_100g: int | None = 0
+    protein_100g: int | None = 0
+    fat_100g: int | None = 0
+    carbs_100g: int | None = 0
+    calories_serving: int | None = 0
+    protein_serving: int | None = 0
+    fat_serving: int | None = 0
+    carbs_serving: int | None = 0
     ingredients: list[str]
     steps: list[dict]
     main_image_url: str | None = None

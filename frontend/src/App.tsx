@@ -29,6 +29,7 @@ function App() {
   });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [session, setSession] = useState<any | null>(null);
+  const [isAuthInitialized, setIsAuthInitialized] = useState(false);
   const [recipesList, setRecipesList] = useState<Recipe[]>([]);
   const [isFetchingRecipes, setIsFetchingRecipes] = useState(false);
 
@@ -49,6 +50,7 @@ function App() {
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
       setIsLoggedIn(!!session);
+      setIsAuthInitialized(true);
     });
 
     const {
@@ -56,6 +58,7 @@ function App() {
     } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
       setIsLoggedIn(!!session);
+      setIsAuthInitialized(true);
     });
 
     return () => subscription.unsubscribe();
@@ -178,7 +181,15 @@ function App() {
           stepNumber: step.step_number,
           text: step.instruction,
           image: step.image_url || ""
-        }))
+        })),
+        calories_100g: dbRecipe.calories_100g,
+        protein_100g: dbRecipe.protein_100g,
+        fat_100g: dbRecipe.fat_100g,
+        carbs_100g: dbRecipe.carbs_100g,
+        calories_serving: dbRecipe.calories_serving,
+        protein_serving: dbRecipe.protein_serving,
+        fat_serving: dbRecipe.fat_serving,
+        carbs_serving: dbRecipe.carbs_serving
       };
       setSelectedRecipe(detailedRecipe);
     } catch (error) {
@@ -412,7 +423,7 @@ function App() {
             onDelete={() => handleDelete(selectedRecipe.id)}
           />
         ) : activeTab === 'home' ? (
-<HomeView url={url} setUrl={setUrl} isLoading={isLoading} statusMessage={statusMessage} handleSubmit={handleSubmit} handleTabChange={handleTabChange} recipesList={recipesList} isFetchingRecipes={isFetchingRecipes} />
+<HomeView url={url} setUrl={setUrl} isLoading={isLoading} statusMessage={statusMessage} handleSubmit={handleSubmit} handleTabChange={handleTabChange} recipesList={recipesList} isFetchingRecipes={isFetchingRecipes} isLoggedIn={isLoggedIn} isAuthInitialized={isAuthInitialized} loginWithGoogle={loginWithGoogle} />
         ) : activeTab === 'settings' ? (
 <SettingsView 
             theme={theme} 
@@ -426,6 +437,13 @@ function App() {
           <CreateRecipeView onBack={() => { window.location.hash = ''; }} onSave={() => toast('Створення в розробці...')} />
         ) : activeTab === 'edit' && selectedRecipe ? (
           <CreateRecipeView initialData={selectedRecipe} onBack={() => { window.location.hash = `recipe-${selectedRecipe.id}`; }} onSave={handleEditSave} />
+        ) : !isLoggedIn && isAuthInitialized ? (
+          <div className="empty-state">
+            <ChefHat size={48} color="var(--border-color)" style={{ marginBottom: '1rem' }} />
+            <h3 style={{ marginBottom: '0.5rem' }}>Необхідна авторизація</h3>
+            <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', textAlign: 'center', maxWidth: '300px' }}>Увійдіть за допомогою Google, щоб отримати доступ до цієї сторінки.</p>
+            <button className="btn-primary" onClick={loginWithGoogle}>Увійти через Google</button>
+          </div>
         ) : (
 <RecipesView recipesList={recipesList} isFetchingRecipes={isFetchingRecipes} />
         )}
