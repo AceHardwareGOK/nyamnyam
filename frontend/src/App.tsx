@@ -452,21 +452,21 @@ function App() {
 
       <nav className="bottom-nav fade-in-nav">
         <button 
-          className={`bottom-nav-link ${activeTab === 'home' ? 'active' : ''}`}
+          className={`bottom-nav-link ${activeTab === 'home' && !selectedRecipe ? 'active' : ''}`}
           onClick={() => handleTabChange('home')}
         >
           <Home size={20} />
           <span>Головна</span>
         </button>
         <button 
-          className={`bottom-nav-link ${activeTab === 'recipes' ? 'active' : ''}`}
+          className={`bottom-nav-link ${activeTab === 'recipes' || !!selectedRecipe ? 'active' : ''}`}
           onClick={() => handleTabChange('recipes')}
         >
           <BookOpen size={20} />
           <span>Рецепти</span>
         </button>
         <button 
-          className={`bottom-nav-link ${activeTab === 'settings' ? 'active' : ''}`}
+          className={`bottom-nav-link ${activeTab === 'settings' && !selectedRecipe ? 'active' : ''}`}
           onClick={() => handleTabChange('settings')}
         >
           <Settings size={20} />
