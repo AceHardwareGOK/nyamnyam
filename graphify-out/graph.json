@@ -1,0 +1,4174 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "config.py",
+      "file_type": "code",
+      "source_file": "backend/config.py",
+      "source_location": "L1",
+      "id": "backend_config_py",
+      "community": 16,
+      "norm_label": "config.py"
+    },
+    {
+      "label": "limiter.py",
+      "file_type": "code",
+      "source_file": "backend/limiter.py",
+      "source_location": "L1",
+      "id": "backend_limiter_py",
+      "community": 17,
+      "norm_label": "limiter.py"
+    },
+    {
+      "label": "logging_config.py",
+      "file_type": "code",
+      "source_file": "backend/logging_config.py",
+      "source_location": "L1",
+      "id": "backend_logging_config_py",
+      "community": 12,
+      "norm_label": "logging_config.py"
+    },
+    {
+      "label": "setup_logging()",
+      "file_type": "code",
+      "source_file": "backend/logging_config.py",
+      "source_location": "L4",
+      "id": "backend_logging_config_setup_logging",
+      "community": 12,
+      "norm_label": "setup_logging()"
+    },
+    {
+      "label": "main.py",
+      "file_type": "code",
+      "source_file": "backend/main.py",
+      "source_location": "L1",
+      "id": "backend_main_py",
+      "community": 13,
+      "norm_label": "main.py"
+    },
+    {
+      "label": "read_root()",
+      "file_type": "code",
+      "source_file": "backend/main.py",
+      "source_location": "L41",
+      "id": "backend_main_read_root",
+      "community": 13,
+      "norm_label": "read_root()"
+    },
+    {
+      "label": "recipe_routes.py",
+      "file_type": "code",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L1",
+      "id": "backend_routes_recipe_routes_py",
+      "community": 4,
+      "norm_label": "recipe_routes.py"
+    },
+    {
+      "label": "get_current_user_id()",
+      "file_type": "code",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L23",
+      "id": "routes_recipe_routes_get_current_user_id",
+      "community": 4,
+      "norm_label": "get_current_user_id()"
+    },
+    {
+      "label": "str",
+      "file_type": "code",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L23",
+      "id": "backend_routes_recipe_routes_py_str",
+      "community": 4,
+      "norm_label": "str"
+    },
+    {
+      "label": "upload_image_route()",
+      "file_type": "code",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L47",
+      "id": "routes_recipe_routes_upload_image_route",
+      "community": 4,
+      "norm_label": "upload_image_route()"
+    },
+    {
+      "label": "UploadFile",
+      "file_type": "code",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L47",
+      "id": "uploadfile",
+      "community": 4,
+      "norm_label": "uploadfile"
+    },
+    {
+      "label": "list_recipes()",
+      "file_type": "code",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L71",
+      "id": "routes_recipe_routes_list_recipes",
+      "community": 4,
+      "norm_label": "list_recipes()"
+    },
+    {
+      "label": "get_recipe()",
+      "file_type": "code",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L76",
+      "id": "routes_recipe_routes_get_recipe",
+      "community": 4,
+      "norm_label": "get_recipe()"
+    },
+    {
+      "label": "ExtractRequest",
+      "file_type": "code",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L82",
+      "id": "routes_recipe_routes_extractrequest",
+      "community": 4,
+      "norm_label": "extractrequest"
+    },
+    {
+      "label": "BaseModel",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "basemodel",
+      "community": 7,
+      "norm_label": "basemodel"
+    },
+    {
+      "label": "process_extraction_job()",
+      "file_type": "code",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L90",
+      "id": "routes_recipe_routes_process_extraction_job",
+      "community": 4,
+      "norm_label": "process_extraction_job()"
+    },
+    {
+      "label": "get_required_user_id()",
+      "file_type": "code",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L140",
+      "id": "routes_recipe_routes_get_required_user_id",
+      "community": 4,
+      "norm_label": "get_required_user_id()"
+    },
+    {
+      "label": "extract_recipe()",
+      "file_type": "code",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L148",
+      "id": "routes_recipe_routes_extract_recipe",
+      "community": 4,
+      "norm_label": "extract_recipe()"
+    },
+    {
+      "label": "Request",
+      "file_type": "code",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L148",
+      "id": "request",
+      "community": 4,
+      "norm_label": "request"
+    },
+    {
+      "label": "BackgroundTasks",
+      "file_type": "code",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L148",
+      "id": "backgroundtasks",
+      "community": 4,
+      "norm_label": "backgroundtasks"
+    },
+    {
+      "label": "get_extraction_status()",
+      "file_type": "code",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L155",
+      "id": "routes_recipe_routes_get_extraction_status",
+      "community": 4,
+      "norm_label": "get_extraction_status()"
+    },
+    {
+      "label": "delete_recipe_route()",
+      "file_type": "code",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L166",
+      "id": "routes_recipe_routes_delete_recipe_route",
+      "community": 4,
+      "norm_label": "delete_recipe_route()"
+    },
+    {
+      "label": "delete_all_recipes_route()",
+      "file_type": "code",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L173",
+      "id": "routes_recipe_routes_delete_all_recipes_route",
+      "community": 4,
+      "norm_label": "delete_all_recipes_route()"
+    },
+    {
+      "label": "UpdateRecipeRequest",
+      "file_type": "code",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L181",
+      "id": "routes_recipe_routes_updatereciperequest",
+      "community": 4,
+      "norm_label": "updatereciperequest"
+    },
+    {
+      "label": "update_recipe_route()",
+      "file_type": "code",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L198",
+      "id": "routes_recipe_routes_update_recipe_route",
+      "community": 4,
+      "norm_label": "update_recipe_route()"
+    },
+    {
+      "label": "share_recipe_route()",
+      "file_type": "code",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L205",
+      "id": "routes_recipe_routes_share_recipe_route",
+      "community": 4,
+      "norm_label": "share_recipe_route()"
+    },
+    {
+      "label": "ai_service.py",
+      "file_type": "code",
+      "source_file": "backend/services/ai_service.py",
+      "source_location": "L1",
+      "id": "backend_services_ai_service_py",
+      "community": 7,
+      "norm_label": "ai_service.py"
+    },
+    {
+      "label": "RecipeStep",
+      "file_type": "code",
+      "source_file": "backend/services/ai_service.py",
+      "source_location": "L8",
+      "id": "services_ai_service_recipestep",
+      "community": 7,
+      "norm_label": "recipestep"
+    },
+    {
+      "label": "NutritionInfo",
+      "file_type": "code",
+      "source_file": "backend/services/ai_service.py",
+      "source_location": "L12",
+      "id": "services_ai_service_nutritioninfo",
+      "community": 7,
+      "norm_label": "nutritioninfo"
+    },
+    {
+      "label": "RecipeExtraction",
+      "file_type": "code",
+      "source_file": "backend/services/ai_service.py",
+      "source_location": "L22",
+      "id": "services_ai_service_recipeextraction",
+      "community": 7,
+      "norm_label": "recipeextraction"
+    },
+    {
+      "label": "extract_recipe_from_video()",
+      "file_type": "code",
+      "source_file": "backend/services/ai_service.py",
+      "source_location": "L34",
+      "id": "services_ai_service_extract_recipe_from_video",
+      "community": 7,
+      "norm_label": "extract_recipe_from_video()"
+    },
+    {
+      "label": "str",
+      "file_type": "code",
+      "source_file": "backend/services/ai_service.py",
+      "source_location": "L34",
+      "id": "backend_services_ai_service_py_str",
+      "community": 7,
+      "norm_label": "str"
+    },
+    {
+      "label": "Uploads video to Gemini File API and extracts recipe using the video and its des",
+      "file_type": "rationale",
+      "source_file": "backend/services/ai_service.py",
+      "source_location": "L35",
+      "id": "services_ai_service_rationale_35",
+      "community": 7,
+      "norm_label": "uploads video to gemini file api and extracts recipe using the video and its des"
+    },
+    {
+      "label": "db_service.py",
+      "file_type": "code",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L1",
+      "id": "backend_services_db_service_py",
+      "community": 4,
+      "norm_label": "db_service.py"
+    },
+    {
+      "label": "upload_image()",
+      "file_type": "code",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L14",
+      "id": "services_db_service_upload_image",
+      "community": 4,
+      "norm_label": "upload_image()"
+    },
+    {
+      "label": "str",
+      "file_type": "code",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L14",
+      "id": "backend_services_db_service_py_str",
+      "community": 4,
+      "norm_label": "str"
+    },
+    {
+      "label": "save_recipe()",
+      "file_type": "code",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L38",
+      "id": "services_db_service_save_recipe",
+      "community": 4,
+      "norm_label": "save_recipe()"
+    },
+    {
+      "label": "RecipeExtraction",
+      "file_type": "code",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L38",
+      "id": "recipeextraction",
+      "community": 7,
+      "norm_label": "recipeextraction"
+    },
+    {
+      "label": "get_all_recipes()",
+      "file_type": "code",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L96",
+      "id": "services_db_service_get_all_recipes",
+      "community": 4,
+      "norm_label": "get_all_recipes()"
+    },
+    {
+      "label": "get_recipe_by_id()",
+      "file_type": "code",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L115",
+      "id": "services_db_service_get_recipe_by_id",
+      "community": 4,
+      "norm_label": "get_recipe_by_id()"
+    },
+    {
+      "label": "delete_recipe()",
+      "file_type": "code",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L134",
+      "id": "services_db_service_delete_recipe",
+      "community": 4,
+      "norm_label": "delete_recipe()"
+    },
+    {
+      "label": "bool",
+      "file_type": "code",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L134",
+      "id": "bool",
+      "community": 4,
+      "norm_label": "bool"
+    },
+    {
+      "label": "delete_all_recipes()",
+      "file_type": "code",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L148",
+      "id": "services_db_service_delete_all_recipes",
+      "community": 4,
+      "norm_label": "delete_all_recipes()"
+    },
+    {
+      "label": "update_recipe()",
+      "file_type": "code",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L157",
+      "id": "services_db_service_update_recipe",
+      "community": 4,
+      "norm_label": "update_recipe()"
+    },
+    {
+      "label": "make_recipe_public()",
+      "file_type": "code",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L211",
+      "id": "services_db_service_make_recipe_public",
+      "community": 4,
+      "norm_label": "make_recipe_public()"
+    },
+    {
+      "label": "create_job()",
+      "file_type": "code",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L220",
+      "id": "services_db_service_create_job",
+      "community": 4,
+      "norm_label": "create_job()"
+    },
+    {
+      "label": "update_job()",
+      "file_type": "code",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L234",
+      "id": "services_db_service_update_job",
+      "community": 4,
+      "norm_label": "update_job()"
+    },
+    {
+      "label": "get_job()",
+      "file_type": "code",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L247",
+      "id": "services_db_service_get_job",
+      "community": 4,
+      "norm_label": "get_job()"
+    },
+    {
+      "label": "Uploads a local image file to Supabase Storage and returns its public URL.",
+      "file_type": "rationale",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L15",
+      "id": "services_db_service_rationale_15",
+      "community": 4,
+      "norm_label": "uploads a local image file to supabase storage and returns its public url."
+    },
+    {
+      "label": "Saves the extracted recipe and associated images to the Supabase Postgres databa",
+      "file_type": "rationale",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L39",
+      "id": "services_db_service_rationale_39",
+      "community": 4,
+      "norm_label": "saves the extracted recipe and associated images to the supabase postgres databa"
+    },
+    {
+      "label": "Fetches all recipes ordered by creation date.",
+      "file_type": "rationale",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L97",
+      "id": "services_db_service_rationale_97",
+      "community": 4,
+      "norm_label": "fetches all recipes ordered by creation date."
+    },
+    {
+      "label": "Fetches a complete recipe with ingredients and steps by ID.",
+      "file_type": "rationale",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L116",
+      "id": "services_db_service_rationale_116",
+      "community": 4,
+      "norm_label": "fetches a complete recipe with ingredients and steps by id."
+    },
+    {
+      "label": "media_service.py",
+      "file_type": "code",
+      "source_file": "backend/services/media_service.py",
+      "source_location": "L1",
+      "id": "backend_services_media_service_py",
+      "community": 9,
+      "norm_label": "media_service.py"
+    },
+    {
+      "label": "extract_screenshots()",
+      "file_type": "code",
+      "source_file": "backend/services/media_service.py",
+      "source_location": "L8",
+      "id": "services_media_service_extract_screenshots",
+      "community": 9,
+      "norm_label": "extract_screenshots()"
+    },
+    {
+      "label": "str",
+      "file_type": "code",
+      "source_file": "backend/services/media_service.py",
+      "source_location": "L8",
+      "id": "backend_services_media_service_py_str",
+      "community": 9,
+      "norm_label": "str"
+    },
+    {
+      "label": "int",
+      "file_type": "code",
+      "source_file": "backend/services/media_service.py",
+      "source_location": "L8",
+      "id": "int",
+      "community": 9,
+      "norm_label": "int"
+    },
+    {
+      "label": "Extracts screenshots from a video at the given timestamps (in seconds).     Retu",
+      "file_type": "rationale",
+      "source_file": "backend/services/media_service.py",
+      "source_location": "L9",
+      "id": "services_media_service_rationale_9",
+      "community": 9,
+      "norm_label": "extracts screenshots from a video at the given timestamps (in seconds).     retu"
+    },
+    {
+      "label": "video_service.py",
+      "file_type": "code",
+      "source_file": "backend/services/video_service.py",
+      "source_location": "L1",
+      "id": "backend_services_video_service_py",
+      "community": 8,
+      "norm_label": "video_service.py"
+    },
+    {
+      "label": "resolve_tiktok_shortlink()",
+      "file_type": "code",
+      "source_file": "backend/services/video_service.py",
+      "source_location": "L9",
+      "id": "services_video_service_resolve_tiktok_shortlink",
+      "community": 8,
+      "norm_label": "resolve_tiktok_shortlink()"
+    },
+    {
+      "label": "str",
+      "file_type": "code",
+      "source_file": "backend/services/video_service.py",
+      "source_location": "L9",
+      "id": "backend_services_video_service_py_str",
+      "community": 8,
+      "norm_label": "str"
+    },
+    {
+      "label": "download_tiktok_carousel()",
+      "file_type": "code",
+      "source_file": "backend/services/video_service.py",
+      "source_location": "L22",
+      "id": "services_video_service_download_tiktok_carousel",
+      "community": 8,
+      "norm_label": "download_tiktok_carousel()"
+    },
+    {
+      "label": "download_video()",
+      "file_type": "code",
+      "source_file": "backend/services/video_service.py",
+      "source_location": "L78",
+      "id": "services_video_service_download_video",
+      "community": 8,
+      "norm_label": "download_video()"
+    },
+    {
+      "label": "Fetches TikTok carousel images via tikwm API and stitches them into a video.",
+      "file_type": "rationale",
+      "source_file": "backend/services/video_service.py",
+      "source_location": "L23",
+      "id": "services_video_service_rationale_23",
+      "community": 8,
+      "norm_label": "fetches tiktok carousel images via tikwm api and stitches them into a video."
+    },
+    {
+      "label": "Downloads a video from the given URL using yt-dlp.     Returns a tuple of (path_",
+      "file_type": "rationale",
+      "source_file": "backend/services/video_service.py",
+      "source_location": "L79",
+      "id": "services_video_service_rationale_79",
+      "community": 8,
+      "norm_label": "downloads a video from the given url using yt-dlp.     returns a tuple of (path_"
+    },
+    {
+      "label": "eslint.config.js",
+      "file_type": "code",
+      "source_file": "frontend/eslint.config.js",
+      "source_location": "L1",
+      "id": "frontend_eslint_config_js",
+      "community": 18,
+      "norm_label": "eslint.config.js"
+    },
+    {
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L1",
+      "id": "frontend_package_json",
+      "community": 2,
+      "norm_label": "package.json"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L2",
+      "id": "frontend_package_name",
+      "community": 2,
+      "norm_label": "name"
+    },
+    {
+      "label": "private",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L3",
+      "id": "frontend_package_private",
+      "community": 2,
+      "norm_label": "private"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L4",
+      "id": "frontend_package_version",
+      "community": 2,
+      "norm_label": "version"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L5",
+      "id": "frontend_package_type",
+      "community": 2,
+      "norm_label": "type"
+    },
+    {
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L6",
+      "id": "frontend_package_scripts",
+      "community": 2,
+      "norm_label": "scripts"
+    },
+    {
+      "label": "dev",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L7",
+      "id": "frontend_package_scripts_dev",
+      "community": 2,
+      "norm_label": "dev"
+    },
+    {
+      "label": "build",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L8",
+      "id": "frontend_package_scripts_build",
+      "community": 2,
+      "norm_label": "build"
+    },
+    {
+      "label": "lint",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L9",
+      "id": "frontend_package_scripts_lint",
+      "community": 2,
+      "norm_label": "lint"
+    },
+    {
+      "label": "preview",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L10",
+      "id": "frontend_package_scripts_preview",
+      "community": 2,
+      "norm_label": "preview"
+    },
+    {
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L12",
+      "id": "frontend_package_dependencies",
+      "community": 2,
+      "norm_label": "dependencies"
+    },
+    {
+      "label": "@supabase/supabase-js",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L13",
+      "id": "frontend_package_dependencies_supabase_supabase_js",
+      "community": 2,
+      "norm_label": "@supabase/supabase-js"
+    },
+    {
+      "label": "framer-motion",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L14",
+      "id": "frontend_package_dependencies_framer_motion",
+      "community": 2,
+      "norm_label": "framer-motion"
+    },
+    {
+      "label": "lucide-react",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L15",
+      "id": "frontend_package_dependencies_lucide_react",
+      "community": 2,
+      "norm_label": "lucide-react"
+    },
+    {
+      "label": "react",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L16",
+      "id": "frontend_package_dependencies_react",
+      "community": 2,
+      "norm_label": "react"
+    },
+    {
+      "label": "react-dom",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L17",
+      "id": "frontend_package_dependencies_react_dom",
+      "community": 2,
+      "norm_label": "react-dom"
+    },
+    {
+      "label": "react-hot-toast",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L18",
+      "id": "frontend_package_dependencies_react_hot_toast",
+      "community": 2,
+      "norm_label": "react-hot-toast"
+    },
+    {
+      "label": "react-router-dom",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L19",
+      "id": "frontend_package_dependencies_react_router_dom",
+      "community": 2,
+      "norm_label": "react-router-dom"
+    },
+    {
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L21",
+      "id": "frontend_package_devdependencies",
+      "community": 6,
+      "norm_label": "devdependencies"
+    },
+    {
+      "label": "@eslint/js",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L22",
+      "id": "frontend_package_devdependencies_eslint_js",
+      "community": 6,
+      "norm_label": "@eslint/js"
+    },
+    {
+      "label": "@types/node",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L23",
+      "id": "frontend_package_devdependencies_types_node",
+      "community": 6,
+      "norm_label": "@types/node"
+    },
+    {
+      "label": "@types/react",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L24",
+      "id": "frontend_package_devdependencies_types_react",
+      "community": 6,
+      "norm_label": "@types/react"
+    },
+    {
+      "label": "@types/react-dom",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L25",
+      "id": "frontend_package_devdependencies_types_react_dom",
+      "community": 6,
+      "norm_label": "@types/react-dom"
+    },
+    {
+      "label": "@vitejs/plugin-react",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L26",
+      "id": "frontend_package_devdependencies_vitejs_plugin_react",
+      "community": 6,
+      "norm_label": "@vitejs/plugin-react"
+    },
+    {
+      "label": "eslint",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L27",
+      "id": "frontend_package_devdependencies_eslint",
+      "community": 6,
+      "norm_label": "eslint"
+    },
+    {
+      "label": "eslint-plugin-react-hooks",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L28",
+      "id": "frontend_package_devdependencies_eslint_plugin_react_hooks",
+      "community": 6,
+      "norm_label": "eslint-plugin-react-hooks"
+    },
+    {
+      "label": "eslint-plugin-react-refresh",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L29",
+      "id": "frontend_package_devdependencies_eslint_plugin_react_refresh",
+      "community": 6,
+      "norm_label": "eslint-plugin-react-refresh"
+    },
+    {
+      "label": "globals",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L30",
+      "id": "frontend_package_devdependencies_globals",
+      "community": 6,
+      "norm_label": "globals"
+    },
+    {
+      "label": "typescript",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L31",
+      "id": "frontend_package_devdependencies_typescript",
+      "community": 6,
+      "norm_label": "typescript"
+    },
+    {
+      "label": "typescript-eslint",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L32",
+      "id": "frontend_package_devdependencies_typescript_eslint",
+      "community": 6,
+      "norm_label": "typescript-eslint"
+    },
+    {
+      "label": "vite",
+      "file_type": "code",
+      "source_file": "frontend/package.json",
+      "source_location": "L33",
+      "id": "frontend_package_devdependencies_vite",
+      "community": 6,
+      "norm_label": "vite"
+    },
+    {
+      "label": "tsconfig.app.json",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L1",
+      "id": "frontend_tsconfig_app_json",
+      "community": 1,
+      "norm_label": "tsconfig.app.json"
+    },
+    {
+      "label": "compilerOptions",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L2",
+      "id": "frontend_tsconfig_app_compileroptions",
+      "community": 1,
+      "norm_label": "compileroptions"
+    },
+    {
+      "label": "tsBuildInfoFile",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L3",
+      "id": "frontend_tsconfig_app_compileroptions_tsbuildinfofile",
+      "community": 1,
+      "norm_label": "tsbuildinfofile"
+    },
+    {
+      "label": "target",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L4",
+      "id": "frontend_tsconfig_app_compileroptions_target",
+      "community": 1,
+      "norm_label": "target"
+    },
+    {
+      "label": "lib",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L5",
+      "id": "frontend_tsconfig_app_compileroptions_lib",
+      "community": 1,
+      "norm_label": "lib"
+    },
+    {
+      "label": "module",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L6",
+      "id": "frontend_tsconfig_app_compileroptions_module",
+      "community": 1,
+      "norm_label": "module"
+    },
+    {
+      "label": "types",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L7",
+      "id": "frontend_tsconfig_app_compileroptions_types",
+      "community": 1,
+      "norm_label": "types"
+    },
+    {
+      "label": "skipLibCheck",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L8",
+      "id": "frontend_tsconfig_app_compileroptions_skiplibcheck",
+      "community": 1,
+      "norm_label": "skiplibcheck"
+    },
+    {
+      "label": "moduleResolution",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L11",
+      "id": "frontend_tsconfig_app_compileroptions_moduleresolution",
+      "community": 1,
+      "norm_label": "moduleresolution"
+    },
+    {
+      "label": "allowImportingTsExtensions",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L12",
+      "id": "frontend_tsconfig_app_compileroptions_allowimportingtsextensions",
+      "community": 1,
+      "norm_label": "allowimportingtsextensions"
+    },
+    {
+      "label": "verbatimModuleSyntax",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L13",
+      "id": "frontend_tsconfig_app_compileroptions_verbatimmodulesyntax",
+      "community": 1,
+      "norm_label": "verbatimmodulesyntax"
+    },
+    {
+      "label": "moduleDetection",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L14",
+      "id": "frontend_tsconfig_app_compileroptions_moduledetection",
+      "community": 1,
+      "norm_label": "moduledetection"
+    },
+    {
+      "label": "noEmit",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L15",
+      "id": "frontend_tsconfig_app_compileroptions_noemit",
+      "community": 1,
+      "norm_label": "noemit"
+    },
+    {
+      "label": "jsx",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L16",
+      "id": "frontend_tsconfig_app_compileroptions_jsx",
+      "community": 1,
+      "norm_label": "jsx"
+    },
+    {
+      "label": "noUnusedLocals",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L19",
+      "id": "frontend_tsconfig_app_compileroptions_nounusedlocals",
+      "community": 1,
+      "norm_label": "nounusedlocals"
+    },
+    {
+      "label": "noUnusedParameters",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L20",
+      "id": "frontend_tsconfig_app_compileroptions_nounusedparameters",
+      "community": 1,
+      "norm_label": "nounusedparameters"
+    },
+    {
+      "label": "erasableSyntaxOnly",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L21",
+      "id": "frontend_tsconfig_app_compileroptions_erasablesyntaxonly",
+      "community": 1,
+      "norm_label": "erasablesyntaxonly"
+    },
+    {
+      "label": "noFallthroughCasesInSwitch",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L22",
+      "id": "frontend_tsconfig_app_compileroptions_nofallthroughcasesinswitch",
+      "community": 1,
+      "norm_label": "nofallthroughcasesinswitch"
+    },
+    {
+      "label": "include",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L24",
+      "id": "frontend_tsconfig_app_include",
+      "community": 1,
+      "norm_label": "include"
+    },
+    {
+      "label": "tsconfig.json",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.json",
+      "source_location": "L1",
+      "id": "frontend_tsconfig_json",
+      "community": 10,
+      "norm_label": "tsconfig.json"
+    },
+    {
+      "label": "files",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.json",
+      "source_location": "L2",
+      "id": "frontend_tsconfig_files",
+      "community": 10,
+      "norm_label": "files"
+    },
+    {
+      "label": "references",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.json",
+      "source_location": "L3",
+      "id": "frontend_tsconfig_references",
+      "community": 10,
+      "norm_label": "references"
+    },
+    {
+      "label": "tsconfig.node.json",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L1",
+      "id": "frontend_tsconfig_node_json",
+      "community": 3,
+      "norm_label": "tsconfig.node.json"
+    },
+    {
+      "label": "compilerOptions",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L2",
+      "id": "frontend_tsconfig_node_compileroptions",
+      "community": 3,
+      "norm_label": "compileroptions"
+    },
+    {
+      "label": "tsBuildInfoFile",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L3",
+      "id": "frontend_tsconfig_node_compileroptions_tsbuildinfofile",
+      "community": 3,
+      "norm_label": "tsbuildinfofile"
+    },
+    {
+      "label": "target",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L4",
+      "id": "frontend_tsconfig_node_compileroptions_target",
+      "community": 3,
+      "norm_label": "target"
+    },
+    {
+      "label": "lib",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L5",
+      "id": "frontend_tsconfig_node_compileroptions_lib",
+      "community": 3,
+      "norm_label": "lib"
+    },
+    {
+      "label": "module",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L6",
+      "id": "frontend_tsconfig_node_compileroptions_module",
+      "community": 3,
+      "norm_label": "module"
+    },
+    {
+      "label": "types",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L7",
+      "id": "frontend_tsconfig_node_compileroptions_types",
+      "community": 3,
+      "norm_label": "types"
+    },
+    {
+      "label": "skipLibCheck",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L8",
+      "id": "frontend_tsconfig_node_compileroptions_skiplibcheck",
+      "community": 3,
+      "norm_label": "skiplibcheck"
+    },
+    {
+      "label": "moduleResolution",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L11",
+      "id": "frontend_tsconfig_node_compileroptions_moduleresolution",
+      "community": 3,
+      "norm_label": "moduleresolution"
+    },
+    {
+      "label": "allowImportingTsExtensions",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L12",
+      "id": "frontend_tsconfig_node_compileroptions_allowimportingtsextensions",
+      "community": 3,
+      "norm_label": "allowimportingtsextensions"
+    },
+    {
+      "label": "verbatimModuleSyntax",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L13",
+      "id": "frontend_tsconfig_node_compileroptions_verbatimmodulesyntax",
+      "community": 3,
+      "norm_label": "verbatimmodulesyntax"
+    },
+    {
+      "label": "moduleDetection",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L14",
+      "id": "frontend_tsconfig_node_compileroptions_moduledetection",
+      "community": 3,
+      "norm_label": "moduledetection"
+    },
+    {
+      "label": "noEmit",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L15",
+      "id": "frontend_tsconfig_node_compileroptions_noemit",
+      "community": 3,
+      "norm_label": "noemit"
+    },
+    {
+      "label": "noUnusedLocals",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L18",
+      "id": "frontend_tsconfig_node_compileroptions_nounusedlocals",
+      "community": 3,
+      "norm_label": "nounusedlocals"
+    },
+    {
+      "label": "noUnusedParameters",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L19",
+      "id": "frontend_tsconfig_node_compileroptions_nounusedparameters",
+      "community": 3,
+      "norm_label": "nounusedparameters"
+    },
+    {
+      "label": "erasableSyntaxOnly",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L20",
+      "id": "frontend_tsconfig_node_compileroptions_erasablesyntaxonly",
+      "community": 3,
+      "norm_label": "erasablesyntaxonly"
+    },
+    {
+      "label": "noFallthroughCasesInSwitch",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L21",
+      "id": "frontend_tsconfig_node_compileroptions_nofallthroughcasesinswitch",
+      "community": 3,
+      "norm_label": "nofallthroughcasesinswitch"
+    },
+    {
+      "label": "include",
+      "file_type": "code",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L23",
+      "id": "frontend_tsconfig_node_include",
+      "community": 3,
+      "norm_label": "include"
+    },
+    {
+      "label": "vite.config.ts",
+      "file_type": "code",
+      "source_file": "frontend/vite.config.ts",
+      "source_location": "L1",
+      "id": "frontend_vite_config_ts",
+      "community": 19,
+      "norm_label": "vite.config.ts"
+    },
+    {
+      "label": "App.tsx",
+      "file_type": "code",
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L1",
+      "id": "frontend_src_app_tsx",
+      "community": 0,
+      "norm_label": "app.tsx"
+    },
+    {
+      "label": "App()",
+      "file_type": "code",
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L21",
+      "id": "src_app_app",
+      "community": 0,
+      "norm_label": "app()"
+    },
+    {
+      "label": "main.tsx",
+      "file_type": "code",
+      "source_file": "frontend/src/main.tsx",
+      "source_location": "L1",
+      "id": "frontend_src_main_tsx",
+      "community": 0,
+      "norm_label": "main.tsx"
+    },
+    {
+      "label": "supabaseClient.ts",
+      "file_type": "code",
+      "source_file": "frontend/src/supabaseClient.ts",
+      "source_location": "L1",
+      "id": "frontend_src_supabaseclient_ts",
+      "community": 0,
+      "norm_label": "supabaseclient.ts"
+    },
+    {
+      "label": "supabase",
+      "file_type": "code",
+      "source_file": "frontend/src/supabaseClient.ts",
+      "source_location": "L6",
+      "id": "src_supabaseclient_supabase",
+      "community": 0,
+      "norm_label": "supabase"
+    },
+    {
+      "label": "types.ts",
+      "file_type": "code",
+      "source_file": "frontend/src/types.ts",
+      "source_location": "L1",
+      "id": "frontend_src_types_ts",
+      "community": 0,
+      "norm_label": "types.ts"
+    },
+    {
+      "label": "RecipeStep",
+      "file_type": "code",
+      "source_file": "frontend/src/types.ts",
+      "source_location": "L1",
+      "id": "src_types_recipestep",
+      "community": 0,
+      "norm_label": "recipestep"
+    },
+    {
+      "label": "Recipe",
+      "file_type": "code",
+      "source_file": "frontend/src/types.ts",
+      "source_location": "L7",
+      "id": "src_types_recipe",
+      "community": 0,
+      "norm_label": "recipe"
+    },
+    {
+      "label": "CreateRecipeView.tsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/CreateRecipeView.tsx",
+      "source_location": "L1",
+      "id": "frontend_src_components_createrecipeview_tsx",
+      "community": 0,
+      "norm_label": "createrecipeview.tsx"
+    },
+    {
+      "label": "CreateRecipeView()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/CreateRecipeView.tsx",
+      "source_location": "L8",
+      "id": "components_createrecipeview_createrecipeview",
+      "community": 0,
+      "norm_label": "createrecipeview()"
+    },
+    {
+      "label": "GenerationProgressView.tsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/GenerationProgressView.tsx",
+      "source_location": "L1",
+      "id": "frontend_src_components_generationprogressview_tsx",
+      "community": 0,
+      "norm_label": "generationprogressview.tsx"
+    },
+    {
+      "label": "GenerationProgressProps",
+      "file_type": "code",
+      "source_file": "frontend/src/components/GenerationProgressView.tsx",
+      "source_location": "L3",
+      "id": "components_generationprogressview_generationprogressprops",
+      "community": 0,
+      "norm_label": "generationprogressprops"
+    },
+    {
+      "label": "steps",
+      "file_type": "code",
+      "source_file": "frontend/src/components/GenerationProgressView.tsx",
+      "source_location": "L7",
+      "id": "components_generationprogressview_steps",
+      "community": 0,
+      "norm_label": "steps"
+    },
+    {
+      "label": "GenerationProgressView()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/GenerationProgressView.tsx",
+      "source_location": "L16",
+      "id": "components_generationprogressview_generationprogressview",
+      "community": 0,
+      "norm_label": "generationprogressview()"
+    },
+    {
+      "label": "HomeView.tsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/HomeView.tsx",
+      "source_location": "L1",
+      "id": "frontend_src_components_homeview_tsx",
+      "community": 0,
+      "norm_label": "homeview.tsx"
+    },
+    {
+      "label": "HomeViewProps",
+      "file_type": "code",
+      "source_file": "frontend/src/components/HomeView.tsx",
+      "source_location": "L6",
+      "id": "components_homeview_homeviewprops",
+      "community": 0,
+      "norm_label": "homeviewprops"
+    },
+    {
+      "label": "HomeView()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/HomeView.tsx",
+      "source_location": "L20",
+      "id": "components_homeview_homeview",
+      "community": 0,
+      "norm_label": "homeview()"
+    },
+    {
+      "label": "RecipeDetailView.tsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/RecipeDetailView.tsx",
+      "source_location": "L1",
+      "id": "frontend_src_components_recipedetailview_tsx",
+      "community": 0,
+      "norm_label": "recipedetailview.tsx"
+    },
+    {
+      "label": "RecipeDetailViewProps",
+      "file_type": "code",
+      "source_file": "frontend/src/components/RecipeDetailView.tsx",
+      "source_location": "L5",
+      "id": "components_recipedetailview_recipedetailviewprops",
+      "community": 0,
+      "norm_label": "recipedetailviewprops"
+    },
+    {
+      "label": "RecipeDetailView()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/RecipeDetailView.tsx",
+      "source_location": "L13",
+      "id": "components_recipedetailview_recipedetailview",
+      "community": 0,
+      "norm_label": "recipedetailview()"
+    },
+    {
+      "label": "RecipesView.tsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/RecipesView.tsx",
+      "source_location": "L1",
+      "id": "frontend_src_components_recipesview_tsx",
+      "community": 0,
+      "norm_label": "recipesview.tsx"
+    },
+    {
+      "label": "RecipesViewProps",
+      "file_type": "code",
+      "source_file": "frontend/src/components/RecipesView.tsx",
+      "source_location": "L5",
+      "id": "components_recipesview_recipesviewprops",
+      "community": 0,
+      "norm_label": "recipesviewprops"
+    },
+    {
+      "label": "RecipesView()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/RecipesView.tsx",
+      "source_location": "L10",
+      "id": "components_recipesview_recipesview",
+      "community": 0,
+      "norm_label": "recipesview()"
+    },
+    {
+      "label": "SettingsView.tsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/SettingsView.tsx",
+      "source_location": "L1",
+      "id": "frontend_src_components_settingsview_tsx",
+      "community": 0,
+      "norm_label": "settingsview.tsx"
+    },
+    {
+      "label": "SettingsViewProps",
+      "file_type": "code",
+      "source_file": "frontend/src/components/SettingsView.tsx",
+      "source_location": "L3",
+      "id": "components_settingsview_settingsviewprops",
+      "community": 0,
+      "norm_label": "settingsviewprops"
+    },
+    {
+      "label": "SettingsView()",
+      "file_type": "code",
+      "source_file": "frontend/src/components/SettingsView.tsx",
+      "source_location": "L12",
+      "id": "components_settingsview_settingsview",
+      "community": 0,
+      "norm_label": "settingsview()"
+    },
+    {
+      "label": "Downloads a video from the given URL using yt-dlp.     Returns a tuple of (path_",
+      "file_type": "rationale",
+      "source_file": "backend/services/video_service.py",
+      "source_location": "L76",
+      "community": 8,
+      "norm_label": "downloads a video from the given url using yt-dlp.     returns a tuple of (path_",
+      "id": "services_video_service_rationale_76"
+    },
+    {
+      "label": "FastAPI",
+      "file_type": "code",
+      "source_file": "backend/requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 14,
+      "norm_label": "fastapi",
+      "id": "requirements_fastapi"
+    },
+    {
+      "label": "Uvicorn",
+      "file_type": "code",
+      "source_file": "backend/requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 14,
+      "norm_label": "uvicorn",
+      "id": "requirements_uvicorn"
+    },
+    {
+      "label": "yt-dlp",
+      "file_type": "code",
+      "source_file": "backend/requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 15,
+      "norm_label": "yt-dlp",
+      "id": "requirements_ytdlp"
+    },
+    {
+      "label": "Google GenAI",
+      "file_type": "code",
+      "source_file": "backend/requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 20,
+      "norm_label": "google genai",
+      "id": "requirements_googlegenai"
+    },
+    {
+      "label": "Supabase",
+      "file_type": "code",
+      "source_file": "backend/requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 21,
+      "norm_label": "supabase",
+      "id": "requirements_supabase"
+    },
+    {
+      "label": "ffmpeg-python",
+      "file_type": "code",
+      "source_file": "backend/requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 15,
+      "norm_label": "ffmpeg-python",
+      "id": "requirements_ffmpegpython"
+    },
+    {
+      "label": "Frontend Entry Point",
+      "file_type": "document",
+      "source_file": "frontend/index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 11,
+      "norm_label": "frontend entry point",
+      "id": "index_html"
+    },
+    {
+      "label": "Main Entry Script",
+      "file_type": "code",
+      "source_file": "frontend/src/main.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 11,
+      "norm_label": "main entry script",
+      "id": "main_tsx"
+    },
+    {
+      "label": "Favicon",
+      "file_type": "image",
+      "source_file": "frontend/public/favicon.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 22,
+      "norm_label": "favicon",
+      "id": "favicon_svg"
+    },
+    {
+      "label": "Icon Sprite Sheet",
+      "file_type": "image",
+      "source_file": "frontend/public/icons.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 23,
+      "norm_label": "icon sprite sheet",
+      "id": "icons_svg"
+    },
+    {
+      "label": "Hero Image",
+      "file_type": "image",
+      "source_file": "frontend/src/assets/hero.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 24,
+      "norm_label": "hero image",
+      "id": "hero_png"
+    },
+    {
+      "label": "React Logo",
+      "file_type": "image",
+      "source_file": "frontend/src/assets/react.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 25,
+      "norm_label": "react logo",
+      "id": "react_svg"
+    },
+    {
+      "label": "Vite Logo",
+      "file_type": "image",
+      "source_file": "frontend/src/assets/vite.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 11,
+      "norm_label": "vite logo",
+      "id": "vite_svg"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/logging_config.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_logging_config_py",
+      "target": "backend_logging_config_setup_logging"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/main.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_main_py",
+      "target": "backend_main_read_root"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L173",
+      "weight": 1.0,
+      "source": "backend_routes_recipe_routes_py",
+      "target": "routes_recipe_routes_delete_all_recipes_route",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L166",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_routes_recipe_routes_py",
+      "target": "routes_recipe_routes_delete_recipe_route"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L148",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_routes_recipe_routes_py",
+      "target": "routes_recipe_routes_extract_recipe"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L82",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_routes_recipe_routes_py",
+      "target": "routes_recipe_routes_extractrequest"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_routes_recipe_routes_py",
+      "target": "routes_recipe_routes_get_current_user_id"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L155",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_routes_recipe_routes_py",
+      "target": "routes_recipe_routes_get_extraction_status"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L76",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_routes_recipe_routes_py",
+      "target": "routes_recipe_routes_get_recipe"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L140",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_routes_recipe_routes_py",
+      "target": "routes_recipe_routes_get_required_user_id"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L71",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_routes_recipe_routes_py",
+      "target": "routes_recipe_routes_list_recipes"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L90",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_routes_recipe_routes_py",
+      "target": "routes_recipe_routes_process_extraction_job"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L205",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_routes_recipe_routes_py",
+      "target": "routes_recipe_routes_share_recipe_route"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L198",
+      "weight": 1.0,
+      "source": "backend_routes_recipe_routes_py",
+      "target": "routes_recipe_routes_update_recipe_route",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L181",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_routes_recipe_routes_py",
+      "target": "routes_recipe_routes_updatereciperequest"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L47",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_routes_recipe_routes_py",
+      "target": "routes_recipe_routes_upload_image_route"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L173",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_routes_recipe_routes_py",
+      "target": "services_db_service_delete_all_recipes"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L198",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_routes_recipe_routes_py",
+      "target": "services_db_service_update_recipe"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_recipe_routes_get_current_user_id",
+      "target": "backend_routes_recipe_routes_py_str"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L141",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_recipe_routes_get_required_user_id",
+      "target": "routes_recipe_routes_get_current_user_id"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L173",
+      "weight": 1.0,
+      "source": "routes_recipe_routes_delete_all_recipes_route",
+      "target": "backend_routes_recipe_routes_py_str",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L166",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_recipe_routes_delete_recipe_route",
+      "target": "backend_routes_recipe_routes_py_str"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L148",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_recipe_routes_extract_recipe",
+      "target": "backend_routes_recipe_routes_py_str"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L155",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_recipe_routes_get_extraction_status",
+      "target": "backend_routes_recipe_routes_py_str"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L76",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_recipe_routes_get_recipe",
+      "target": "backend_routes_recipe_routes_py_str"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L140",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_recipe_routes_get_required_user_id",
+      "target": "backend_routes_recipe_routes_py_str"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L71",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_recipe_routes_list_recipes",
+      "target": "backend_routes_recipe_routes_py_str"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L90",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_recipe_routes_process_extraction_job",
+      "target": "backend_routes_recipe_routes_py_str"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L205",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_recipe_routes_share_recipe_route",
+      "target": "backend_routes_recipe_routes_py_str"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L198",
+      "weight": 1.0,
+      "source": "routes_recipe_routes_update_recipe_route",
+      "target": "backend_routes_recipe_routes_py_str",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L47",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_recipe_routes_upload_image_route",
+      "target": "backend_routes_recipe_routes_py_str"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L173",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_db_service_delete_all_recipes",
+      "target": "backend_routes_recipe_routes_py_str"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L198",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_db_service_update_recipe",
+      "target": "backend_routes_recipe_routes_py_str"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "routes_recipe_routes_upload_image_route",
+      "target": "services_db_service_upload_image"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L47",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_recipe_routes_upload_image_route",
+      "target": "uploadfile"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "routes_recipe_routes_list_recipes",
+      "target": "services_db_service_get_all_recipes"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "routes_recipe_routes_get_recipe",
+      "target": "services_db_service_get_recipe_by_id"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L148",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_recipe_routes_extract_recipe",
+      "target": "routes_recipe_routes_extractrequest"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L82",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_recipe_routes_extractrequest",
+      "target": "basemodel"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L181",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_recipe_routes_updatereciperequest",
+      "target": "basemodel"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/ai_service.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_ai_service_nutritioninfo",
+      "target": "basemodel"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/ai_service.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_ai_service_recipeextraction",
+      "target": "basemodel"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/ai_service.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_ai_service_recipestep",
+      "target": "basemodel"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L99",
+      "weight": 1.0,
+      "source": "routes_recipe_routes_process_extraction_job",
+      "target": "services_ai_service_extract_recipe_from_video"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L123",
+      "weight": 1.0,
+      "source": "routes_recipe_routes_process_extraction_job",
+      "target": "services_db_service_save_recipe"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L93",
+      "weight": 1.0,
+      "source": "routes_recipe_routes_process_extraction_job",
+      "target": "services_db_service_update_job"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L112",
+      "weight": 1.0,
+      "source": "routes_recipe_routes_process_extraction_job",
+      "target": "services_db_service_upload_image"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L105",
+      "weight": 1.0,
+      "source": "routes_recipe_routes_process_extraction_job",
+      "target": "services_media_service_extract_screenshots"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L95",
+      "weight": 1.0,
+      "source": "routes_recipe_routes_process_extraction_job",
+      "target": "services_video_service_download_video"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L148",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_recipe_routes_extract_recipe",
+      "target": "backgroundtasks"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L148",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_recipe_routes_extract_recipe",
+      "target": "request"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L150",
+      "weight": 1.0,
+      "source": "routes_recipe_routes_extract_recipe",
+      "target": "services_db_service_create_job"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L156",
+      "weight": 1.0,
+      "source": "routes_recipe_routes_get_extraction_status",
+      "target": "services_db_service_get_job"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L167",
+      "weight": 1.0,
+      "source": "routes_recipe_routes_delete_recipe_route",
+      "target": "services_db_service_delete_recipe"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L176",
+      "weight": 1.0,
+      "source": "routes_recipe_routes_delete_all_recipes_route",
+      "target": "services_db_service_delete_all_recipes"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L198",
+      "weight": 1.0,
+      "source": "routes_recipe_routes_update_recipe_route",
+      "target": "routes_recipe_routes_updatereciperequest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L198",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_db_service_update_recipe",
+      "target": "routes_recipe_routes_updatereciperequest"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L199",
+      "weight": 1.0,
+      "source": "routes_recipe_routes_update_recipe_route",
+      "target": "services_db_service_update_recipe"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/routes/recipe_routes.py",
+      "source_location": "L208",
+      "weight": 1.0,
+      "source": "routes_recipe_routes_share_recipe_route",
+      "target": "services_db_service_make_recipe_public"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/ai_service.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_services_ai_service_py",
+      "target": "services_ai_service_extract_recipe_from_video"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/ai_service.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_services_ai_service_py",
+      "target": "services_ai_service_nutritioninfo"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/ai_service.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_services_ai_service_py",
+      "target": "services_ai_service_recipeextraction"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/ai_service.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_services_ai_service_py",
+      "target": "services_ai_service_recipestep"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L7",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "backend_services_db_service_py_str",
+      "target": "services_ai_service_recipeextraction"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L7",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "bool",
+      "target": "services_ai_service_recipeextraction"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L7",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "recipeextraction",
+      "target": "services_ai_service_recipeextraction"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/ai_service.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_ai_service_extract_recipe_from_video",
+      "target": "services_ai_service_recipeextraction"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/ai_service.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_ai_service_extract_recipe_from_video",
+      "target": "backend_services_ai_service_py_str"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/ai_service.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_ai_service_rationale_35",
+      "target": "services_ai_service_extract_recipe_from_video"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L220",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_services_db_service_py",
+      "target": "services_db_service_create_job"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L148",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_services_db_service_py",
+      "target": "services_db_service_delete_all_recipes"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L134",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_services_db_service_py",
+      "target": "services_db_service_delete_recipe"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L96",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_services_db_service_py",
+      "target": "services_db_service_get_all_recipes"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L247",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_services_db_service_py",
+      "target": "services_db_service_get_job"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L115",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_services_db_service_py",
+      "target": "services_db_service_get_recipe_by_id"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L211",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_services_db_service_py",
+      "target": "services_db_service_make_recipe_public"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_services_db_service_py",
+      "target": "services_db_service_save_recipe"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L234",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_services_db_service_py",
+      "target": "services_db_service_update_job"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L157",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_services_db_service_py",
+      "target": "services_db_service_update_recipe"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_services_db_service_py",
+      "target": "services_db_service_upload_image"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_db_service_rationale_15",
+      "target": "services_db_service_upload_image"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_db_service_upload_image",
+      "target": "backend_services_db_service_py_str"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L220",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_db_service_create_job",
+      "target": "backend_services_db_service_py_str"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L148",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_db_service_delete_all_recipes",
+      "target": "backend_services_db_service_py_str"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L134",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_db_service_delete_recipe",
+      "target": "backend_services_db_service_py_str"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L96",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_db_service_get_all_recipes",
+      "target": "backend_services_db_service_py_str"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L247",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_db_service_get_job",
+      "target": "backend_services_db_service_py_str"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L115",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_db_service_get_recipe_by_id",
+      "target": "backend_services_db_service_py_str"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L211",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_db_service_make_recipe_public",
+      "target": "backend_services_db_service_py_str"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_db_service_save_recipe",
+      "target": "backend_services_db_service_py_str"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L234",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_db_service_update_job",
+      "target": "backend_services_db_service_py_str"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L157",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_db_service_update_recipe",
+      "target": "backend_services_db_service_py_str"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_db_service_rationale_39",
+      "target": "services_db_service_save_recipe"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_db_service_save_recipe",
+      "target": "recipeextraction"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L97",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_db_service_rationale_97",
+      "target": "services_db_service_get_all_recipes"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L116",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_db_service_rationale_116",
+      "target": "services_db_service_get_recipe_by_id"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L134",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_db_service_delete_recipe",
+      "target": "bool"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L220",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_db_service_create_job",
+      "target": "bool"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L148",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_db_service_delete_all_recipes",
+      "target": "bool"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L211",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_db_service_make_recipe_public",
+      "target": "bool"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L234",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_db_service_update_job",
+      "target": "bool"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/db_service.py",
+      "source_location": "L157",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_db_service_update_recipe",
+      "target": "bool"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/media_service.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_services_media_service_py",
+      "target": "services_media_service_extract_screenshots"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/media_service.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_media_service_extract_screenshots",
+      "target": "backend_services_media_service_py_str"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/media_service.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_media_service_extract_screenshots",
+      "target": "int"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/media_service.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_media_service_rationale_9",
+      "target": "services_media_service_extract_screenshots"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/video_service.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_services_video_service_py",
+      "target": "services_video_service_download_tiktok_carousel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/video_service.py",
+      "source_location": "L75",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_services_video_service_py",
+      "target": "services_video_service_download_video"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/video_service.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "backend_services_video_service_py",
+      "target": "services_video_service_resolve_tiktok_shortlink"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/video_service.py",
+      "source_location": "L81",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_video_service_download_video",
+      "target": "services_video_service_resolve_tiktok_shortlink"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/video_service.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_video_service_resolve_tiktok_shortlink",
+      "target": "backend_services_video_service_py_str"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/video_service.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_video_service_download_tiktok_carousel",
+      "target": "backend_services_video_service_py_str"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/video_service.py",
+      "source_location": "L75",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_video_service_download_video",
+      "target": "backend_services_video_service_py_str"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/video_service.py",
+      "source_location": "L85",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_video_service_download_video",
+      "target": "services_video_service_download_tiktok_carousel"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/video_service.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_video_service_rationale_23",
+      "target": "services_video_service_download_tiktok_carousel"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/video_service.py",
+      "source_location": "L76",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_video_service_rationale_76",
+      "target": "services_video_service_download_video"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/services/video_service.py",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "services_video_service_rationale_79",
+      "target": "services_video_service_download_video",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_json",
+      "target": "frontend_package_dependencies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_json",
+      "target": "frontend_package_devdependencies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_json",
+      "target": "frontend_package_name"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_json",
+      "target": "frontend_package_private"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_json",
+      "target": "frontend_package_scripts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_json",
+      "target": "frontend_package_type"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_json",
+      "target": "frontend_package_version"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_scripts",
+      "target": "frontend_package_scripts_build"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_scripts",
+      "target": "frontend_package_scripts_dev"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_scripts",
+      "target": "frontend_package_scripts_lint"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_scripts",
+      "target": "frontend_package_scripts_preview"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_dependencies",
+      "target": "frontend_package_dependencies_framer_motion"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_dependencies",
+      "target": "frontend_package_dependencies_lucide_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_dependencies",
+      "target": "frontend_package_dependencies_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_dependencies",
+      "target": "frontend_package_dependencies_react_dom"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_dependencies",
+      "target": "frontend_package_dependencies_react_hot_toast"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_dependencies",
+      "target": "frontend_package_dependencies_react_router_dom"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_dependencies",
+      "target": "frontend_package_dependencies_supabase_supabase_js"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_devdependencies",
+      "target": "frontend_package_devdependencies_eslint"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_devdependencies",
+      "target": "frontend_package_devdependencies_eslint_js"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_devdependencies",
+      "target": "frontend_package_devdependencies_eslint_plugin_react_hooks"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_devdependencies",
+      "target": "frontend_package_devdependencies_eslint_plugin_react_refresh"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_devdependencies",
+      "target": "frontend_package_devdependencies_globals"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_devdependencies",
+      "target": "frontend_package_devdependencies_types_node"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_devdependencies",
+      "target": "frontend_package_devdependencies_types_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "frontend_package_devdependencies",
+      "target": "frontend_package_devdependencies_types_react_dom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_devdependencies",
+      "target": "frontend_package_devdependencies_typescript"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_devdependencies",
+      "target": "frontend_package_devdependencies_typescript_eslint"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_devdependencies",
+      "target": "frontend_package_devdependencies_vite"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/package.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_package_devdependencies",
+      "target": "frontend_package_devdependencies_vitejs_plugin_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_app_json",
+      "target": "frontend_tsconfig_app_compileroptions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_app_json",
+      "target": "frontend_tsconfig_app_include"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_app_compileroptions",
+      "target": "frontend_tsconfig_app_compileroptions_allowimportingtsextensions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_app_compileroptions",
+      "target": "frontend_tsconfig_app_compileroptions_erasablesyntaxonly"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_app_compileroptions",
+      "target": "frontend_tsconfig_app_compileroptions_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_app_compileroptions",
+      "target": "frontend_tsconfig_app_compileroptions_lib"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_app_compileroptions",
+      "target": "frontend_tsconfig_app_compileroptions_module"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_app_compileroptions",
+      "target": "frontend_tsconfig_app_compileroptions_moduledetection"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_app_compileroptions",
+      "target": "frontend_tsconfig_app_compileroptions_moduleresolution"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_app_compileroptions",
+      "target": "frontend_tsconfig_app_compileroptions_noemit"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_app_compileroptions",
+      "target": "frontend_tsconfig_app_compileroptions_nofallthroughcasesinswitch"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_app_compileroptions",
+      "target": "frontend_tsconfig_app_compileroptions_nounusedlocals"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_app_compileroptions",
+      "target": "frontend_tsconfig_app_compileroptions_nounusedparameters"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_app_compileroptions",
+      "target": "frontend_tsconfig_app_compileroptions_skiplibcheck"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_app_compileroptions",
+      "target": "frontend_tsconfig_app_compileroptions_target"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_app_compileroptions",
+      "target": "frontend_tsconfig_app_compileroptions_tsbuildinfofile"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_app_compileroptions",
+      "target": "frontend_tsconfig_app_compileroptions_types"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.app.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_app_compileroptions",
+      "target": "frontend_tsconfig_app_compileroptions_verbatimmodulesyntax"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_json",
+      "target": "frontend_tsconfig_files"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_json",
+      "target": "frontend_tsconfig_references"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_node_json",
+      "target": "frontend_tsconfig_node_compileroptions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_node_json",
+      "target": "frontend_tsconfig_node_include"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_node_compileroptions",
+      "target": "frontend_tsconfig_node_compileroptions_allowimportingtsextensions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_node_compileroptions",
+      "target": "frontend_tsconfig_node_compileroptions_erasablesyntaxonly"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_node_compileroptions",
+      "target": "frontend_tsconfig_node_compileroptions_lib"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_node_compileroptions",
+      "target": "frontend_tsconfig_node_compileroptions_module"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_node_compileroptions",
+      "target": "frontend_tsconfig_node_compileroptions_moduledetection"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_node_compileroptions",
+      "target": "frontend_tsconfig_node_compileroptions_moduleresolution"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_node_compileroptions",
+      "target": "frontend_tsconfig_node_compileroptions_noemit"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_node_compileroptions",
+      "target": "frontend_tsconfig_node_compileroptions_nofallthroughcasesinswitch"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_node_compileroptions",
+      "target": "frontend_tsconfig_node_compileroptions_nounusedlocals"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_node_compileroptions",
+      "target": "frontend_tsconfig_node_compileroptions_nounusedparameters"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_node_compileroptions",
+      "target": "frontend_tsconfig_node_compileroptions_skiplibcheck"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_node_compileroptions",
+      "target": "frontend_tsconfig_node_compileroptions_target"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_node_compileroptions",
+      "target": "frontend_tsconfig_node_compileroptions_tsbuildinfofile"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_node_compileroptions",
+      "target": "frontend_tsconfig_node_compileroptions_types"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/tsconfig.node.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_tsconfig_node_compileroptions",
+      "target": "frontend_tsconfig_node_compileroptions_verbatimmodulesyntax"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "frontend_src_app_tsx",
+      "target": "components_createrecipeview_createrecipeview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_app_tsx",
+      "target": "components_homeview_homeview"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "frontend_src_app_tsx",
+      "target": "components_recipedetailview_recipedetailview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_app_tsx",
+      "target": "components_recipesview_recipesview"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_app_tsx",
+      "target": "components_settingsview_settingsview"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_app_tsx",
+      "target": "frontend_src_components_createrecipeview_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "frontend_src_app_tsx",
+      "target": "frontend_src_components_homeview_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_app_tsx",
+      "target": "frontend_src_components_recipedetailview_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "frontend_src_app_tsx",
+      "target": "frontend_src_components_recipesview_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "frontend_src_app_tsx",
+      "target": "frontend_src_components_settingsview_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_app_tsx",
+      "target": "frontend_src_supabaseclient_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_app_tsx",
+      "target": "frontend_src_types_ts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_app_tsx",
+      "target": "src_app_app"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_app_tsx",
+      "target": "src_supabaseclient_supabase"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_app_tsx",
+      "target": "src_types_recipe"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/main.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_main_tsx",
+      "target": "frontend_src_app_tsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/CreateRecipeView.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_components_createrecipeview_tsx",
+      "target": "frontend_src_supabaseclient_ts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/supabaseClient.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_supabaseclient_ts",
+      "target": "src_supabaseclient_supabase"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/CreateRecipeView.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_components_createrecipeview_tsx",
+      "target": "src_supabaseclient_supabase"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/HomeView.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_homeview_homeview",
+      "target": "frontend_src_types_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/RecipesView.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_recipesview_recipesview",
+      "target": "frontend_src_types_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/CreateRecipeView.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_components_createrecipeview_tsx",
+      "target": "frontend_src_types_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/HomeView.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "frontend_src_components_homeview_tsx",
+      "target": "frontend_src_types_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/RecipeDetailView.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_components_recipedetailview_tsx",
+      "target": "frontend_src_types_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/RecipesView.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "frontend_src_components_recipesview_tsx",
+      "target": "frontend_src_types_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/types.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_types_ts",
+      "target": "src_types_recipe"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/types.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_types_ts",
+      "target": "src_types_recipestep"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/HomeView.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_homeview_homeview",
+      "target": "src_types_recipe"
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/HomeView.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_homeview_homeviewprops",
+      "target": "src_types_recipe"
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/RecipeDetailView.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_recipedetailview_recipedetailviewprops",
+      "target": "src_types_recipe"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/RecipesView.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_recipesview_recipesview",
+      "target": "src_types_recipe"
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/RecipesView.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_recipesview_recipesviewprops",
+      "target": "src_types_recipe"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/CreateRecipeView.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_components_createrecipeview_tsx",
+      "target": "src_types_recipe"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/HomeView.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "frontend_src_components_homeview_tsx",
+      "target": "src_types_recipe",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/RecipeDetailView.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_components_recipedetailview_tsx",
+      "target": "src_types_recipe"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/RecipesView.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "frontend_src_components_recipesview_tsx",
+      "target": "src_types_recipe",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/CreateRecipeView.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "frontend_src_components_createrecipeview_tsx",
+      "target": "components_createrecipeview_createrecipeview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/HomeView.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_homeview_homeview",
+      "target": "frontend_src_components_generationprogressview_tsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/GenerationProgressView.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_components_generationprogressview_tsx",
+      "target": "components_generationprogressview_generationprogressprops"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/GenerationProgressView.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "frontend_src_components_generationprogressview_tsx",
+      "target": "components_generationprogressview_generationprogressview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/GenerationProgressView.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_components_generationprogressview_tsx",
+      "target": "components_generationprogressview_steps"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/HomeView.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "frontend_src_components_homeview_tsx",
+      "target": "frontend_src_components_generationprogressview_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/HomeView.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "frontend_src_components_homeview_tsx",
+      "target": "components_generationprogressview_generationprogressview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/HomeView.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "frontend_src_components_homeview_tsx",
+      "target": "components_homeview_homeview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/HomeView.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "frontend_src_components_homeview_tsx",
+      "target": "components_homeview_homeviewprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/HomeView.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_homeview_homeview",
+      "target": "components_homeview_homeviewprops"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/RecipeDetailView.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "frontend_src_components_recipedetailview_tsx",
+      "target": "components_recipedetailview_recipedetailview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/RecipeDetailView.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "frontend_src_components_recipedetailview_tsx",
+      "target": "components_recipedetailview_recipedetailviewprops"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/RecipesView.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "frontend_src_components_recipesview_tsx",
+      "target": "components_recipesview_recipesview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/RecipesView.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "frontend_src_components_recipesview_tsx",
+      "target": "components_recipesview_recipesviewprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/RecipesView.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_recipesview_recipesview",
+      "target": "components_recipesview_recipesviewprops"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/SettingsView.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "frontend_src_components_settingsview_tsx",
+      "target": "components_settingsview_settingsview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/SettingsView.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "frontend_src_components_settingsview_tsx",
+      "target": "components_settingsview_settingsviewprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/SettingsView.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_settingsview_settingsview",
+      "target": "components_settingsview_settingsviewprops"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "backend/requirements.txt",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "requirements_fastapi",
+      "target": "requirements_uvicorn"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/requirements.txt",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "requirements_ytdlp",
+      "target": "requirements_ffmpegpython"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "index_html",
+      "target": "main_tsx"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "index_html",
+      "target": "vite_svg"
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "2968d9421f810c0077b9381f00a0bba4b7e275f1"
+}

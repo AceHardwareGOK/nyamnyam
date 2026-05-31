@@ -1,0 +1,132 @@
+{
+  "D:\\sites\\nyamnyam\\backend\\config.py": {
+    "mtime": 1777401737.1486843,
+    "ast_hash": "077b618f938214812cd64f47c0093707",
+    "semantic_hash": "077b618f938214812cd64f47c0093707"
+  },
+  "D:\\sites\\nyamnyam\\backend\\limiter.py": {
+    "mtime": 1778300563.118288,
+    "ast_hash": "fc08ccdfa70848761e3dfdd5f1862f54",
+    "semantic_hash": "fc08ccdfa70848761e3dfdd5f1862f54"
+  },
+  "D:\\sites\\nyamnyam\\backend\\logging_config.py": {
+    "mtime": 1778300820.2220986,
+    "ast_hash": "15262a992f12e1494473cdb7c1f6247c",
+    "semantic_hash": "15262a992f12e1494473cdb7c1f6247c"
+  },
+  "D:\\sites\\nyamnyam\\backend\\main.py": {
+    "mtime": 1778300825.9270706,
+    "ast_hash": "92db597a4454b2c76c2a37d5a5b557e6",
+    "semantic_hash": "92db597a4454b2c76c2a37d5a5b557e6"
+  },
+  "D:\\sites\\nyamnyam\\backend\\supabase_schema.sql": {
+    "mtime": 1778977857.7457108,
+    "ast_hash": "fba9131eed140e901f1a13e7544cdfbe",
+    "semantic_hash": "fba9131eed140e901f1a13e7544cdfbe"
+  },
+  "D:\\sites\\nyamnyam\\backend\\routes\\recipe_routes.py": {
+    "mtime": 1778977906.0282276,
+    "ast_hash": "62b0dfc30ca3e571c5d3582b9e8a05c1",
+    "semantic_hash": "62b0dfc30ca3e571c5d3582b9e8a05c1"
+  },
+  "D:\\sites\\nyamnyam\\backend\\services\\ai_service.py": {
+    "mtime": 1778977867.0931003,
+    "ast_hash": "fc854769cfca0586685c9ba3e5566443",
+    "semantic_hash": "fc854769cfca0586685c9ba3e5566443"
+  },
+  "D:\\sites\\nyamnyam\\backend\\services\\db_service.py": {
+    "mtime": 1778977894.5809598,
+    "ast_hash": "deb12d286ecb80821277aa5ced98fce5",
+    "semantic_hash": "deb12d286ecb80821277aa5ced98fce5"
+  },
+  "D:\\sites\\nyamnyam\\backend\\services\\media_service.py": {
+    "mtime": 1777404661.7329135,
+    "ast_hash": "c7205d270d2640d817c90106f8f4c362",
+    "semantic_hash": "c7205d270d2640d817c90106f8f4c362"
+  },
+  "D:\\sites\\nyamnyam\\backend\\services\\video_service.py": {
+    "mtime": 1778975842.7798028,
+    "ast_hash": "69f9d341e03a49013c9fd54aca4eed04",
+    "semantic_hash": "69f9d341e03a49013c9fd54aca4eed04"
+  },
+  "D:\\sites\\nyamnyam\\frontend\\eslint.config.js": {
+    "mtime": 1777231404.0941794,
+    "ast_hash": "0355276bc79439afe3c53e3a2470ca1e",
+    "semantic_hash": "0355276bc79439afe3c53e3a2470ca1e"
+  },
+  "D:\\sites\\nyamnyam\\frontend\\package.json": {
+    "mtime": 1778300655.5272405,
+    "ast_hash": "bdd88d7bf365288745df8c7eca7d7f0c",
+    "semantic_hash": "bdd88d7bf365288745df8c7eca7d7f0c"
+  },
+  "D:\\sites\\nyamnyam\\frontend\\tsconfig.app.json": {
+    "mtime": 1777231404.1325507,
+    "ast_hash": "136630b5accce1ca50663df229534a26",
+    "semantic_hash": "136630b5accce1ca50663df229534a26"
+  },
+  "D:\\sites\\nyamnyam\\frontend\\tsconfig.json": {
+    "mtime": 1777231404.1382246,
+    "ast_hash": "a3d39fa780ebff65444de257f291ce6c",
+    "semantic_hash": "a3d39fa780ebff65444de257f291ce6c"
+  },
+  "D:\\sites\\nyamnyam\\frontend\\tsconfig.node.json": {
+    "mtime": 1777231404.144196,
+    "ast_hash": "70bdd0a673bcfc0e828080b306e7c680",
+    "semantic_hash": "70bdd0a673bcfc0e828080b306e7c680"
+  },
+  "D:\\sites\\nyamnyam\\frontend\\vite.config.ts": {
+    "mtime": 1777231404.2835546,
+    "ast_hash": "88439104b3c207f17d33ef3160e3b080",
+    "semantic_hash": "88439104b3c207f17d33ef3160e3b080"
+  },
+  "D:\\sites\\nyamnyam\\frontend\\src\\App.tsx": {
+    "mtime": 1778977930.316105,
+    "ast_hash": "99b1e855c52cb2488c404ebd3908c64a",
+    "semantic_hash": "99b1e855c52cb2488c404ebd3908c64a"
+  },
+  "D:\\sites\\nyamnyam\\frontend\\src\\main.tsx": {
+    "mtime": 1777231513.1632156,
+    "ast_hash": "f0aab8cf84ea135afb4ba065f88b7326",
+    "semantic_hash": "f0aab8cf84ea135afb4ba065f88b7326"
+  },
+  "D:\\sites\\nyamnyam\\frontend\\src\\supabaseClient.ts": {
+    "mtime": 1777404763.8287525,
+    "ast_hash": "4759d8c06d6dc7bf46edb59481225fce",
+    "semantic_hash": "4759d8c06d6dc7bf46edb59481225fce"
+  },
+  "D:\\sites\\nyamnyam\\frontend\\src\\types.ts": {
+    "mtime": 1778977917.3815248,
+    "ast_hash": "374ba135286938f1dc2ca7867f33e784",
+    "semantic_hash": "374ba135286938f1dc2ca7867f33e784"
+  },
+  "D:\\sites\\nyamnyam\\frontend\\src\\components\\CreateRecipeView.tsx": {
+    "mtime": 1778978017.6024246,
+    "ast_hash": "53cf3c6559233494abb1dde3572206eb",
+    "semantic_hash": "53cf3c6559233494abb1dde3572206eb"
+  },
+  "D:\\sites\\nyamnyam\\frontend\\src\\components\\GenerationProgressView.tsx": {
+    "mtime": 1778301422.4763777,
+    "ast_hash": "84aaaec4a8938511b1fb776b91feed7b",
+    "semantic_hash": "84aaaec4a8938511b1fb776b91feed7b"
+  },
+  "D:\\sites\\nyamnyam\\frontend\\src\\components\\HomeView.tsx": {
+    "mtime": 1778976488.0544395,
+    "ast_hash": "41b6757890578fcf9bfdf7924bf1073f",
+    "semantic_hash": "41b6757890578fcf9bfdf7924bf1073f"
+  },
+  "D:\\sites\\nyamnyam\\frontend\\src\\components\\RecipeDetailView.tsx": {
+    "mtime": 1778977952.3973324,
+    "ast_hash": "6a55cc4c3b005ab5a9710371c662a35b",
+    "semantic_hash": "6a55cc4c3b005ab5a9710371c662a35b"
+  },
+  "D:\\sites\\nyamnyam\\frontend\\src\\components\\RecipesView.tsx": {
+    "mtime": 1778300951.687503,
+    "ast_hash": "907e52a529add8920bf61c19b6f88f44",
+    "semantic_hash": "907e52a529add8920bf61c19b6f88f44"
+  },
+  "D:\\sites\\nyamnyam\\frontend\\src\\components\\SettingsView.tsx": {
+    "mtime": 1778299646.177534,
+    "ast_hash": "8af02f550e90445e2b03f58c85057c19",
+    "semantic_hash": "8af02f550e90445e2b03f58c85057c19"
+  }
+}

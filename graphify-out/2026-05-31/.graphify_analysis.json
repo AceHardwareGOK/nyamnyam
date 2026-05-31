@@ -1,0 +1,364 @@
+{
+  "communities": {
+    "0": [
+      "components_generationprogressview_generationprogressprops",
+      "components_generationprogressview_steps",
+      "components_homeview_homeview",
+      "components_homeview_homeviewprops",
+      "components_recipedetailview_recipedetailviewprops",
+      "components_recipesview_recipesview",
+      "components_recipesview_recipesviewprops",
+      "components_settingsview_settingsview",
+      "components_settingsview_settingsviewprops",
+      "frontend_src_app_tsx",
+      "frontend_src_components_createrecipeview_tsx",
+      "frontend_src_components_generationprogressview_tsx",
+      "frontend_src_components_recipedetailview_tsx",
+      "frontend_src_main_tsx",
+      "frontend_src_supabaseclient_ts",
+      "frontend_src_types_ts",
+      "src_app_app",
+      "src_supabaseclient_supabase",
+      "src_types_recipe",
+      "src_types_recipestep"
+    ],
+    "1": [
+      "frontend_tsconfig_app_compileroptions",
+      "frontend_tsconfig_app_compileroptions_allowimportingtsextensions",
+      "frontend_tsconfig_app_compileroptions_erasablesyntaxonly",
+      "frontend_tsconfig_app_compileroptions_jsx",
+      "frontend_tsconfig_app_compileroptions_lib",
+      "frontend_tsconfig_app_compileroptions_module",
+      "frontend_tsconfig_app_compileroptions_moduledetection",
+      "frontend_tsconfig_app_compileroptions_moduleresolution",
+      "frontend_tsconfig_app_compileroptions_noemit",
+      "frontend_tsconfig_app_compileroptions_nofallthroughcasesinswitch",
+      "frontend_tsconfig_app_compileroptions_nounusedlocals",
+      "frontend_tsconfig_app_compileroptions_nounusedparameters",
+      "frontend_tsconfig_app_compileroptions_skiplibcheck",
+      "frontend_tsconfig_app_compileroptions_target",
+      "frontend_tsconfig_app_compileroptions_tsbuildinfofile",
+      "frontend_tsconfig_app_compileroptions_types",
+      "frontend_tsconfig_app_compileroptions_verbatimmodulesyntax",
+      "frontend_tsconfig_app_include",
+      "frontend_tsconfig_app_json"
+    ],
+    "2": [
+      "frontend_package_dependencies",
+      "frontend_package_dependencies_framer_motion",
+      "frontend_package_dependencies_lucide_react",
+      "frontend_package_dependencies_react",
+      "frontend_package_dependencies_react_dom",
+      "frontend_package_dependencies_react_hot_toast",
+      "frontend_package_dependencies_react_router_dom",
+      "frontend_package_dependencies_supabase_supabase_js",
+      "frontend_package_json",
+      "frontend_package_name",
+      "frontend_package_private",
+      "frontend_package_scripts",
+      "frontend_package_scripts_build",
+      "frontend_package_scripts_dev",
+      "frontend_package_scripts_lint",
+      "frontend_package_scripts_preview",
+      "frontend_package_type",
+      "frontend_package_version"
+    ],
+    "3": [
+      "frontend_tsconfig_node_compileroptions",
+      "frontend_tsconfig_node_compileroptions_allowimportingtsextensions",
+      "frontend_tsconfig_node_compileroptions_erasablesyntaxonly",
+      "frontend_tsconfig_node_compileroptions_lib",
+      "frontend_tsconfig_node_compileroptions_module",
+      "frontend_tsconfig_node_compileroptions_moduledetection",
+      "frontend_tsconfig_node_compileroptions_moduleresolution",
+      "frontend_tsconfig_node_compileroptions_noemit",
+      "frontend_tsconfig_node_compileroptions_nofallthroughcasesinswitch",
+      "frontend_tsconfig_node_compileroptions_nounusedlocals",
+      "frontend_tsconfig_node_compileroptions_nounusedparameters",
+      "frontend_tsconfig_node_compileroptions_skiplibcheck",
+      "frontend_tsconfig_node_compileroptions_target",
+      "frontend_tsconfig_node_compileroptions_tsbuildinfofile",
+      "frontend_tsconfig_node_compileroptions_types",
+      "frontend_tsconfig_node_compileroptions_verbatimmodulesyntax",
+      "frontend_tsconfig_node_include",
+      "frontend_tsconfig_node_json"
+    ],
+    "4": [
+      "backend_routes_recipe_routes_py",
+      "backend_routes_recipe_routes_py_str",
+      "backgroundtasks",
+      "request",
+      "routes_recipe_routes_delete_recipe_route",
+      "routes_recipe_routes_extract_recipe",
+      "routes_recipe_routes_extractrequest",
+      "routes_recipe_routes_get_current_user_id",
+      "routes_recipe_routes_get_extraction_status",
+      "routes_recipe_routes_get_recipe",
+      "routes_recipe_routes_get_required_user_id",
+      "routes_recipe_routes_list_recipes",
+      "routes_recipe_routes_process_extraction_job",
+      "routes_recipe_routes_share_recipe_route",
+      "routes_recipe_routes_upload_image_route",
+      "services_db_service_rationale_15",
+      "services_db_service_upload_image",
+      "uploadfile"
+    ],
+    "5": [
+      "backend_services_db_service_py",
+      "backend_services_db_service_py_str",
+      "bool",
+      "recipeextraction",
+      "services_db_service_create_job",
+      "services_db_service_delete_all_recipes",
+      "services_db_service_delete_recipe",
+      "services_db_service_get_all_recipes",
+      "services_db_service_get_job",
+      "services_db_service_get_recipe_by_id",
+      "services_db_service_make_recipe_public",
+      "services_db_service_rationale_116",
+      "services_db_service_rationale_39",
+      "services_db_service_rationale_97",
+      "services_db_service_save_recipe",
+      "services_db_service_update_job",
+      "services_db_service_update_recipe"
+    ],
+    "6": [
+      "frontend_package_devdependencies",
+      "frontend_package_devdependencies_eslint",
+      "frontend_package_devdependencies_eslint_js",
+      "frontend_package_devdependencies_eslint_plugin_react_hooks",
+      "frontend_package_devdependencies_eslint_plugin_react_refresh",
+      "frontend_package_devdependencies_globals",
+      "frontend_package_devdependencies_types_node",
+      "frontend_package_devdependencies_types_react",
+      "frontend_package_devdependencies_typescript",
+      "frontend_package_devdependencies_typescript_eslint",
+      "frontend_package_devdependencies_vite",
+      "frontend_package_devdependencies_vitejs_plugin_react"
+    ],
+    "7": [
+      "backend_services_ai_service_py",
+      "backend_services_ai_service_py_str",
+      "basemodel",
+      "routes_recipe_routes_updatereciperequest",
+      "services_ai_service_extract_recipe_from_video",
+      "services_ai_service_nutritioninfo",
+      "services_ai_service_rationale_35",
+      "services_ai_service_recipeextraction",
+      "services_ai_service_recipestep"
+    ],
+    "8": [
+      "backend_services_video_service_py",
+      "backend_services_video_service_py_str",
+      "services_video_service_download_tiktok_carousel",
+      "services_video_service_download_video",
+      "services_video_service_rationale_23",
+      "services_video_service_rationale_76",
+      "services_video_service_resolve_tiktok_shortlink"
+    ],
+    "9": [
+      "backend_services_media_service_py",
+      "backend_services_media_service_py_str",
+      "int",
+      "services_media_service_extract_screenshots",
+      "services_media_service_rationale_9"
+    ],
+    "10": [
+      "frontend_tsconfig_files",
+      "frontend_tsconfig_json",
+      "frontend_tsconfig_references"
+    ],
+    "11": [
+      "index_html",
+      "main_tsx",
+      "vite_svg"
+    ],
+    "12": [
+      "backend_logging_config_py",
+      "backend_logging_config_setup_logging"
+    ],
+    "13": [
+      "backend_main_py",
+      "backend_main_read_root"
+    ],
+    "14": [
+      "requirements_fastapi",
+      "requirements_uvicorn"
+    ],
+    "15": [
+      "requirements_ffmpegpython",
+      "requirements_ytdlp"
+    ],
+    "16": [
+      "backend_config_py"
+    ],
+    "17": [
+      "backend_limiter_py"
+    ],
+    "18": [
+      "frontend_eslint_config_js"
+    ],
+    "19": [
+      "frontend_vite_config_ts"
+    ],
+    "20": [
+      "requirements_googlegenai"
+    ],
+    "21": [
+      "requirements_supabase"
+    ],
+    "22": [
+      "favicon_svg"
+    ],
+    "23": [
+      "icons_svg"
+    ],
+    "24": [
+      "hero_png"
+    ],
+    "25": [
+      "react_svg"
+    ]
+  },
+  "cohesion": {
+    "0": 0.17894736842105263,
+    "1": 0.10526315789473684,
+    "2": 0.1111111111111111,
+    "3": 0.1111111111111111,
+    "4": 0.1895424836601307,
+    "5": 0.22058823529411764,
+    "6": 0.16666666666666666,
+    "7": 0.3055555555555556,
+    "8": 0.47619047619047616,
+    "9": 0.4,
+    "10": 0.6666666666666666,
+    "11": 0.6666666666666666,
+    "12": 1.0,
+    "13": 1.0,
+    "14": 1.0,
+    "15": 1.0,
+    "16": 1.0,
+    "17": 1.0,
+    "18": 1.0,
+    "19": 1.0,
+    "20": 1.0,
+    "21": 1.0,
+    "22": 1.0,
+    "23": 1.0,
+    "24": 1.0,
+    "25": 1.0
+  },
+  "gods": [
+    {
+      "id": "frontend_tsconfig_app_compileroptions",
+      "label": "compilerOptions",
+      "degree": 17
+    },
+    {
+      "id": "frontend_tsconfig_node_compileroptions",
+      "label": "compilerOptions",
+      "degree": 16
+    },
+    {
+      "id": "backend_routes_recipe_routes_py_str",
+      "label": "str",
+      "degree": 12
+    },
+    {
+      "id": "backend_services_db_service_py_str",
+      "label": "str",
+      "degree": 12
+    },
+    {
+      "id": "src_types_recipe",
+      "label": "Recipe",
+      "degree": 9
+    },
+    {
+      "id": "routes_recipe_routes_process_extraction_job",
+      "label": "process_extraction_job()",
+      "degree": 8
+    },
+    {
+      "id": "bool",
+      "label": "bool",
+      "degree": 7
+    },
+    {
+      "id": "routes_recipe_routes_extract_recipe",
+      "label": "extract_recipe()",
+      "degree": 6
+    },
+    {
+      "id": "services_ai_service_recipeextraction",
+      "label": "RecipeExtraction",
+      "degree": 6
+    },
+    {
+      "id": "services_db_service_update_recipe",
+      "label": "update_recipe()",
+      "degree": 6
+    }
+  ],
+  "surprises": [
+    {
+      "source": "RecipeExtraction",
+      "target": "RecipeExtraction",
+      "source_files": [
+        "backend/services/db_service.py",
+        "backend/services/ai_service.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities; peripheral node `RecipeExtraction` unexpectedly reaches hub `RecipeExtraction`"
+    },
+    {
+      "source": "list_recipes()",
+      "target": "get_all_recipes()",
+      "source_files": [
+        "backend/routes/recipe_routes.py",
+        "backend/services/db_service.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    },
+    {
+      "source": "get_recipe()",
+      "target": "get_recipe_by_id()",
+      "source_files": [
+        "backend/routes/recipe_routes.py",
+        "backend/services/db_service.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    },
+    {
+      "source": "process_extraction_job()",
+      "target": "extract_recipe_from_video()",
+      "source_files": [
+        "backend/routes/recipe_routes.py",
+        "backend/services/ai_service.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    },
+    {
+      "source": "process_extraction_job()",
+      "target": "save_recipe()",
+      "source_files": [
+        "backend/routes/recipe_routes.py",
+        "backend/services/db_service.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
+    }
+  ],
+  "tokens": {
+    "input": 27160,
+    "output": 980
+  }
+}

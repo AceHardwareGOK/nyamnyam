@@ -51,14 +51,17 @@ def download_tiktok_carousel(url: str, output_dir: str = "temp_videos") -> tuple
                 
         out_path = os.path.join(output_dir, f"{job_id}.mp4")
         
-        # Stitch using ffmpeg (3 seconds per image)
+        # Stitch using ffmpeg (3 seconds per image), optimized for low memory environments (like 512MB RAM limits)
         cmd = [
             "ffmpeg", "-y",
             "-framerate", "1/3",
             "-i", os.path.join(temp_img_dir, "img%03d.jpg"),
             "-c:v", "libx264",
-            "-vf", "scale=trunc(iw/2)*2:trunc(ih/2)*2,format=yuv420p",
-            "-r", "30",
+            "-preset", "ultrafast",
+            "-tune", "stillimage",
+            "-vf", "scale='min(720,iw)':-2,format=yuv420p",
+            "-r", "5",
+            "-threads", "1",
             out_path
         ]
         
